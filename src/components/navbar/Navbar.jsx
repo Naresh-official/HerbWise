@@ -52,7 +52,7 @@ function Navbar() {
                         </li>
                         <li>
                             <Link
-                                to="#"
+                                to="/all-plants"
                                 className="text-green-700 hover:text-green-900"
                             >
                                 Plants

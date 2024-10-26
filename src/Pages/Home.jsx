@@ -8,9 +8,19 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function HomePage() {
+    const [searchQuery, setSearchQuery] = useState("");
+    const navigate = useNavigate();
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        if (searchQuery.trim()) {
+            navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+        }
+    };
     return (
         <main className="mx-auto px-4 py-8">
             <section className="text-center mb-12 w-full mx-auto bg-white rounded-lg p-8 shadow-md">
@@ -75,23 +85,27 @@ export default function HomePage() {
 
             <section className="mb-12">
                 <div className="max-w-md mx-auto flex">
-                    <Input
-                        type="search"
-                        placeholder="Search plants by name or benefit..."
-                        className="flex-grow bg-white border-2 border-green-700/50"
-                    />
-                    <Button
-                        type="submit"
-                        className="ml-2 text-lg bg-green-600 hover:bg-green-700 text-white"
+                    <form
+                        onSubmit={handleSearch}
+                        className="max-w-md mx-auto flex"
                     >
-                        <Link
-                            to="/search"
-                            className="w-full flex items-center gap-3"
+                        <Input
+                            type="search"
+                            id="search"
+                            placeholder="Search plants by name or scientific name..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="flex-grow bg-white border-2 border-green-700/50"
+                        />
+                        <Button
+                            type="submit"
+                            disabled={!searchQuery.trim()}
+                            className="ml-2 text-lg bg-green-600 hover:bg-green-700 text-white flex items-center gap-3"
                         >
                             <Search className="h-6 w-6" />
                             Search
-                        </Link>
-                    </Button>
+                        </Button>
+                    </form>
                 </div>
             </section>
 

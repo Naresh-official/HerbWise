@@ -178,7 +178,7 @@ export default function About() {
                     </CardContent>
                 </Card>
 
-                <footer className="mt-8 text-center text-green-600 text-sm">
+                <footer className="mt-8 text-center text-neutral-900 text-sm">
                     <p>
                         HerbWise © 2024. Created for educational purposes as
                         part of a college assignment.
