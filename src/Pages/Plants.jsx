@@ -9,8 +9,6 @@ import {
 import axios from "axios";
 import { Button } from "@/components/ui/button.jsx";
 
-import sampleData from "../../sample.json";
-
 export default function AllPlants() {
     const [plants, setPlants] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -59,7 +57,7 @@ export default function AllPlants() {
                                 plant.default_image && (
                                     <Card
                                         key={plant.id}
-                                        className="bg-white border-neutral-300 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
+                                        className="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
                                     >
                                         <CardHeader>
                                             <img
@@ -75,12 +73,12 @@ export default function AllPlants() {
                                                 }
                                                 className="w-full h-60 object-cover rounded-t-lg"
                                             />
-                                            <CardTitle className="text-green-700 pt-5">
+                                            <CardTitle className="text-green-700 dark:text-green-500 pt-5">
                                                 {plant.common_name}
                                             </CardTitle>
                                         </CardHeader>
                                         <CardContent>
-                                            <CardDescription className="text-neutral-900 font-medium">
+                                            <CardDescription className="text-neutral-900 dark:text-white font-medium">
                                                 <span>
                                                     Scientific Name:{" "}
                                                     {plant.scientific_name[0]}
@@ -102,7 +100,7 @@ export default function AllPlants() {
                 )}
 
                 {plants.length === 0 && !loading && !error && (
-                    <p className="text-center text-green-700">
+                    <p className="text-center text-green-700 dark:text-white">
                         No plants found matching your criteria.
                     </p>
                 )}
@@ -110,7 +108,7 @@ export default function AllPlants() {
                 {/* Pagination */}
                 <div className="flex justify-center mt-6 gap-4">
                     <Button
-                        className="w-24 bg-green-800 dark:bg-green-600"
+                        className="w-24 bg-green-800 dark:hover:bg-green-700 dark:bg-green-600 dark:text-white"
                         disabled={pageNumber === 1}
                         onClick={() => setPageNumber((prev) => prev - 1)}
                     >
@@ -155,7 +153,7 @@ export default function AllPlants() {
                         {pageNumber + 2}
                     </Button>
                     <Button
-                        className="w-24 bg-green-800 dark:bg-green-600"
+                        className="w-24 bg-green-800 dark:hover:bg-green-700 dark:bg-green-600 dark:text-white"
                         onClick={() => setPageNumber((prev) => prev + 1)}
                     >
                         Next

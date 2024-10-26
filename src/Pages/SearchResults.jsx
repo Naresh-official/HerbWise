@@ -106,7 +106,7 @@ export default function SearchResults() {
                                 {plants.map((plant) => (
                                     <Card
                                         key={plant.id}
-                                        className="bg-white border-neutral-300 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
+                                        className="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
                                     >
                                         <CardHeader>
                                             <img
@@ -122,12 +122,12 @@ export default function SearchResults() {
                                                 }
                                                 className="w-full h-60 object-cover rounded-t-lg"
                                             />
-                                            <CardTitle className="text-green-700 pt-5">
+                                            <CardTitle className="text-green-700 dark:text-green-500 pt-5">
                                                 {plant.common_name}
                                             </CardTitle>
                                         </CardHeader>
                                         <CardContent>
-                                            <CardDescription className="text-neutral-900 font-medium">
+                                            <CardDescription className="text-neutral-900 dark:text-white font-medium">
                                                 <span>
                                                     Scientific Name:{" "}
                                                     {plant.scientific_name[0]}
