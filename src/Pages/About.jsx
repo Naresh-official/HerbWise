@@ -11,19 +11,19 @@ export default function About() {
     return (
         <div className="min-h-screen p-6">
             <div className="max-w-4xl mx-auto">
-                <h1 className="text-4xl font-bold text-black mb-6 text-center">
+                <h1 className="text-4xl font-bold text-black dark:text-white mb-6 text-center">
                     About HerbWise
                 </h1>
 
-                <Card className="mb-8">
+                <Card className="mb-8 dark:bg-neutral-900">
                     <CardHeader>
-                        <CardTitle className="text-2xl text-neutral-950 flex items-center">
+                        <CardTitle className="text-2xl text-neutral-950 dark:text-white flex items-center">
                             <Leaf className="mr-2 h-6 w-6" />
                             Our Mission
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-neutral-900 mb-4">
+                        <p className="text-neutral-900 dark:text-white mb-4">
                             HerbWise is an educational platform designed to
                             inform users about medicinal plants, their health
                             benefits, and sustainable cultivation practices. Our
@@ -32,7 +32,7 @@ export default function About() {
                             understanding, promoting the responsible use of
                             natural remedies.
                         </p>
-                        <p className="text-neutral-900">
+                        <p className="text-neutral-900 dark:text-white">
                             This project was created as part of a college
                             assignment for social and environmental studies,
                             emphasizing the sustainable use of natural resources
@@ -42,15 +42,15 @@ export default function About() {
                     </CardContent>
                 </Card>
 
-                <Card className="mb-8">
+                <Card className="mb-8 dark:bg-neutral-900">
                     <CardHeader>
-                        <CardTitle className="text-2xl text-neutral-900 flex items-center">
+                        <CardTitle className="text-2xl text-neutral-900 dark:text-white flex items-center">
                             <Globe className="mr-2 h-6 w-6" />
                             Social and Environmental Importance
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <ul className="list-disc pl-5 text-neutral-900 space-y-2">
+                        <ul className="list-disc pl-5 text-neutral-900 dark:text-white space-y-2">
                             <li>
                                 Biodiversity Conservation: By promoting
                                 knowledge about medicinal plants, we contribute
@@ -86,20 +86,20 @@ export default function About() {
                     </CardContent>
                 </Card>
 
-                <Card className="mb-8">
+                <Card className="mb-8 dark:bg-neutral-900">
                     <CardHeader>
-                        <CardTitle className="text-2xl text-neutral-900 flex items-center">
+                        <CardTitle className="text-2xl text-neutral-900 dark:text-white flex items-center">
                             <Database className="mr-2 h-6 w-6" />
                             Data Sources and APIs
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-neutral-900 mb-4">
+                        <p className="text-neutral-900 dark:text-white mb-4">
                             HerbWise relies on a combination of reputable
                             sources and modern technology to provide accurate
                             and up-to-date information:
                         </p>
-                        <ul className="list-disc pl-5 text-neutral-900 space-y-2">
+                        <ul className="list-disc pl-5 text-neutral-900 dark:text-white space-y-2">
                             <li>
                                 Plant Information Database: We use the Trefle
                                 API, a comprehensive botanical database, for
@@ -126,15 +126,15 @@ export default function About() {
                     </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="mb-8 dark:bg-neutral-900">
                     <CardHeader>
-                        <CardTitle className="text-2xl text-neutral-900 flex items-center">
+                        <CardTitle className="text-2xl text-neutral-900 dark:text-white flex items-center">
                             <Book className="mr-2 h-6 w-6" />
                             Project Creation Process
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <ol className="list-decimal pl-5 text-neutral-900 space-y-2">
+                        <ol className="list-decimal pl-5 text-neutral-900 dark:text-white space-y-2">
                             <li>
                                 Research: Extensive research was conducted on
                                 medicinal plants, their uses, and sustainable
@@ -178,7 +178,7 @@ export default function About() {
                     </CardContent>
                 </Card>
 
-                <footer className="mt-8 text-center text-neutral-900 text-sm">
+                <footer className="mt-8 text-center text-neutral-900 dark:text-white text-sm">
                     <p>
                         HerbWise © 2024. Created for educational purposes as
                         part of a college assignment.

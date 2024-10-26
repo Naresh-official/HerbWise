@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { Spotlight } from "@/components/ui/spotlight.jsx";
 
 export default function HomePage() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -23,11 +24,15 @@ export default function HomePage() {
     };
     return (
         <main className="mx-auto px-4 py-8">
-            <section className="text-center mb-12 w-full mx-auto bg-white rounded-lg p-8 shadow-md">
-                <h2 className="text-4xl font-bold text-green-800 mb-4">
+            <Spotlight
+                className="-top-40 left-0 md:left-60 md:-top-20 dark:block hidden"
+                fill="green"
+            />
+            <section className="text-center mb-12 w-full mx-auto bg-white dark:bg-neutral-950 rounded-lg p-8 shadow-md">
+                <h2 className="text-5xl w-1/2 mx-auto font-bold text-green-800 dark:text-neutral-50 mb-4">
                     Discover the Power of Medicinal Plants
                 </h2>
-                <p className="text-lg text-green-700 max-w-xl mx-auto mb-8">
+                <p className="text-lg text-green-700 dark:text-green-200 max-w-xl mx-auto mb-8">
                     Welcome to HerbWise, your comprehensive guide to the world
                     of medicinal plants. We're dedicated to educating and
                     empowering you with knowledge about nature's remedies and
@@ -35,45 +40,45 @@ export default function HomePage() {
                     sustainability.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                    <Card className="bg-green-100 border-green-300">
+                    <Card className="bg-green-100 dark:bg-neutral-950 border-green-300 dark:border-green-500">
                         <CardHeader>
                             <Leaf className="h-8 w-8 text-green-600 mb-2" />
-                            <CardTitle className="text-green-700">
+                            <CardTitle className="text-green-700 dark:text-white">
                                 Natural Remedies
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <p className="text-sm text-green-700">
+                            <p className="text-sm text-green-700 dark:text-white">
                                 Explore a vast array of plants with medicinal
                                 properties and learn how they can support your
                                 health naturally.
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className="bg-green-100 border-green-300">
+                    <Card className="bg-green-100 dark:bg-neutral-950 border-green-300 dark:border-green-500">
                         <CardHeader>
                             <BookOpen className="h-8 w-8 text-green-600 mb-2" />
-                            <CardTitle className="text-green-700">
+                            <CardTitle className="text-green-700 dark:text-white">
                                 Educational Resources
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <p className="text-sm text-green-700">
+                            <p className="text-sm text-green-700 dark:text-white">
                                 Access comprehensive guides on plant
                                 identification, cultivation, and traditional
                                 uses in herbal medicine.
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className="bg-green-100 border-green-300">
+                    <Card className="bg-green-100 dark:bg-neutral-950 border-green-300 dark:border-green-500">
                         <CardHeader>
                             <Sprout className="h-8 w-8 text-green-600 mb-2" />
-                            <CardTitle className="text-green-700">
+                            <CardTitle className="text-green-700 dark:text-white">
                                 Sustainable Practices
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <p className="text-sm text-green-700">
+                            <p className="text-sm text-green-700 dark:text-white">
                                 Learn about sustainable harvesting and
                                 cultivation methods to protect these valuable
                                 natural resources.
@@ -95,12 +100,12 @@ export default function HomePage() {
                             placeholder="Search plants by name or scientific name..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="flex-grow bg-white border-2 border-green-700/50"
+                            className="flex-grow bg-white border-2 border-green-700/50 dark:border-green-500/50 text-white"
                         />
                         <Button
                             type="submit"
                             disabled={!searchQuery.trim()}
-                            className="ml-2 text-lg bg-green-600 hover:bg-green-700 text-white flex items-center gap-3"
+                            className="ml-2 text-lg bg-green-600 dark:bg-green-500 hover:bg-green-700 hover:dark:bg-green-600 text-white dark:text-white flex items-center gap-3"
                         >
                             <Search className="h-6 w-6" />
                             Search
@@ -110,22 +115,22 @@ export default function HomePage() {
             </section>
 
             <section>
-                <h3 className="text-2xl font-semibold text-green-800 mb-6">
+                <h3 className="text-2xl font-semibold text-green-800 dark:text-white mb-6">
                     Featured Medicinal Plants
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {featuredPlants.map((plant, index) => (
                         <Card key={index} className="bg-white border-green-300">
                             <CardHeader>
-                                <CardTitle className="text-green-700">
+                                <CardTitle className="text-green-700 dark:text-white">
                                     {plant.name}
                                 </CardTitle>
-                                <CardDescription className="text-green-600">
+                                <CardDescription className="text-green-600 dark:text-white">
                                     {plant.scientificName}
                                 </CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-sm text-green-700">
+                                <p className="text-sm text-green-700 dark:text-white">
                                     {plant.description}
                                 </p>
                             </CardContent>

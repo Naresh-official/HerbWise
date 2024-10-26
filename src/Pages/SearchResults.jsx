@@ -50,7 +50,6 @@ export default function SearchResults() {
             );
             setPlants(data?.data || []);
         } catch (error) {
-            console.log(error?.response?.data);
             setError(
                 error?.response?.data?.["X-Response"] ||
                     "Failed to fetch plants. Please try again later."

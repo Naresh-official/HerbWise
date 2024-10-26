@@ -18,11 +18,11 @@ function Navbar() {
     };
 
     return (
-        <header className="bg-white/50 w-full shadow-lg z-10">
+        <header className="bg-white/50 dark:bg-neutral-950 w-full shadow-lg border-b-2 border-green-700 fixed z-10">
             <div className="px-4 py-6 flex justify-between items-center">
                 <div className="flex items-center space-x-2">
-                    <Leaf className="h-8 w-8 text-green-700" />
-                    <h1 className="text-3xl font-bold text-green-700">
+                    <Leaf className="h-8 w-8 text-green-700 dark:text-green-600" />
+                    <h1 className="text-3xl font-bold text-green-700 dark:text-green-600">
                         <Link to={"/"}>HerbWise</Link>
                     </h1>
                 </div>
@@ -37,7 +37,7 @@ function Navbar() {
                             ></Switch>
                             <Label
                                 htmlFor="theme-toggle"
-                                className="text-green-700"
+                                className="text-green-700 dark:text-white"
                             >
                                 {theme === "light" ? <Moon /> : <Sun />}
                             </Label>
@@ -45,7 +45,7 @@ function Navbar() {
                         <li>
                             <Link
                                 to="/"
-                                className="text-green-700 hover:text-green-900"
+                                className="text-green-700 dark:text-white hover:text-green-900"
                             >
                                 Home
                             </Link>
@@ -53,7 +53,7 @@ function Navbar() {
                         <li>
                             <Link
                                 to="/all-plants"
-                                className="text-green-700 hover:text-green-900"
+                                className="text-green-700 dark:text-white hover:text-green-900"
                             >
                                 Plants
                             </Link>
@@ -61,7 +61,7 @@ function Navbar() {
                         <li>
                             <Link
                                 to="/about"
-                                className="text-green-700 hover:text-green-900"
+                                className="text-green-700 dark:text-white hover:text-green-900"
                             >
                                 About
                             </Link>
@@ -69,7 +69,7 @@ function Navbar() {
                         <li>
                             <Link
                                 to="#"
-                                className="text-green-700 hover:text-green-900"
+                                className="text-green-700 dark:text-white hover:text-green-900"
                             >
                                 Contact
                             </Link>

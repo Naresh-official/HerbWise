@@ -9,6 +9,8 @@ import {
 import axios from "axios";
 import { Button } from "@/components/ui/button.jsx";
 
+import sampleData from "../../sample.json";
+
 export default function AllPlants() {
     const [plants, setPlants] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -18,7 +20,6 @@ export default function AllPlants() {
     useEffect(() => {
         fetchPlants();
     }, [pageNumber]);
-
     const fetchPlants = async () => {
         setLoading(true);
         try {
@@ -29,7 +30,10 @@ export default function AllPlants() {
             );
             setPlants(data?.data || []);
         } catch (error) {
-            setError("Failed to fetch plants. Please try again later.");
+            setError(
+                error?.response?.data?.["X-Response"] ||
+                    "Failed to fetch plants. Please try again later."
+            );
         } finally {
             setLoading(false);
         }
@@ -37,15 +41,17 @@ export default function AllPlants() {
     return (
         <div className="min-h-screen">
             <div className="p-6 mx-auto">
-                <h1 className="text-3xl text-center font-bold text-neutral-950 mb-6">
+                <h1 className="text-3xl text-center font-bold text-neutral-950 dark:text-white mb-6">
                     All plants
                 </h1>
                 {loading ? (
-                    <p className="text-center text-neutral-900">
+                    <p className="text-center text-neutral-900 dark:text-neutral-50">
                         Loading plants...
                     </p>
                 ) : error ? (
-                    <p className="text-center text-red-600">{error}</p>
+                    <p className="text-center text-red-600 dark:text-red-500">
+                        {error}
+                    </p>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {plants.map(
@@ -100,9 +106,11 @@ export default function AllPlants() {
                         No plants found matching your criteria.
                     </p>
                 )}
+
+                {/* Pagination */}
                 <div className="flex justify-center mt-6 gap-4">
                     <Button
-                        className="w-24 bg-green-800"
+                        className="w-24 bg-green-800 dark:bg-green-600"
                         disabled={pageNumber === 1}
                         onClick={() => setPageNumber((prev) => prev - 1)}
                     >
@@ -111,7 +119,7 @@ export default function AllPlants() {
                     {pageNumber > 2 && (
                         <Button
                             variant="outline"
-                            className="w-10"
+                            className="w-10 dark:text-white"
                             onClick={() => setPageNumber((prev) => prev - 2)}
                         >
                             {pageNumber - 2}
@@ -120,31 +128,34 @@ export default function AllPlants() {
                     {pageNumber > 1 && (
                         <Button
                             variant="outline"
-                            className="w-10"
+                            className="w-10 dark:text-white"
                             onClick={() => setPageNumber((prev) => prev - 1)}
                         >
                             {pageNumber - 1}
                         </Button>
                     )}
-                    <Button variant="outline" className="w-10 border-green-700">
+                    <Button
+                        variant="outline"
+                        className="w-10 dark:text-white border-green-700 dark:border-green-600"
+                    >
                         {pageNumber}
                     </Button>
                     <Button
                         variant="outline"
-                        className="w-10"
+                        className="w-10 dark:text-white"
                         onClick={() => setPageNumber((prev) => prev + 1)}
                     >
                         {pageNumber + 1}
                     </Button>
                     <Button
                         variant="outline"
-                        className="w-10"
+                        className="w-10 dark:text-white"
                         onClick={() => setPageNumber((prev) => prev + 2)}
                     >
                         {pageNumber + 2}
                     </Button>
                     <Button
-                        className="w-24 bg-green-800"
+                        className="w-24 bg-green-800 dark:bg-green-600"
                         onClick={() => setPageNumber((prev) => prev + 1)}
                     >
                         Next

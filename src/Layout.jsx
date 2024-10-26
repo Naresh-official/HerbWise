@@ -14,9 +14,11 @@ function Layout() {
         }
     }, []);
     return (
-        <div className="min-h-screen bg-green-50">
+        <div className="min-h-screen bg-green-50 dark:bg-neutral-950">
             <Navbar />
-            <Outlet />
+            <div className="pt-32">
+                <Outlet />
+            </div>
             <Footer />
         </div>
     );
