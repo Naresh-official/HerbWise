@@ -32,6 +32,7 @@ function Navbar() {
                             <Switch
                                 className="data-[state=checked]:bg-green-700"
                                 id="theme-toggle"
+                                checked={theme === "dark"}
                                 onCheckedChange={toggleTheme}
                             ></Switch>
                             <Label
