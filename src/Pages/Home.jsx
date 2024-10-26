@@ -8,6 +8,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
     return (
@@ -77,14 +78,19 @@ export default function HomePage() {
                     <Input
                         type="search"
                         placeholder="Search plants by name or benefit..."
-                        className="flex-grow bg-white"
+                        className="flex-grow bg-white border-2 border-green-700/50"
                     />
                     <Button
                         type="submit"
                         className="ml-2 text-lg bg-green-600 hover:bg-green-700 text-white"
                     >
-                        <Search />
-                        Search
+                        <Link
+                            to="/search"
+                            className="w-full flex items-center gap-3"
+                        >
+                            <Search className="h-6 w-6" />
+                            Search
+                        </Link>
                     </Button>
                 </div>
             </section>

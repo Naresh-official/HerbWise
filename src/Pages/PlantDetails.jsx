@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { Droplet, Sun, Sprout, Leaf, Beaker } from "lucide-react";
 import {
@@ -94,7 +92,7 @@ export default function PlantDetails({ plantId }) {
     return (
         <div className="min-h-screen bg-green-50 p-6">
             <div className="max-w-4xl mx-auto">
-                <Card className="bg-white border-green-300 mb-8">
+                <Card className="bg-white border-neutral-300 mb-8">
                     <CardHeader>
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                             <div>
@@ -113,7 +111,7 @@ export default function PlantDetails({ plantId }) {
                         </div>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-green-700 mb-4">
+                        <p className="text-neutral-800 mb-4">
                             {plant.description}
                         </p>
                     </CardContent>
@@ -133,12 +131,12 @@ export default function PlantDetails({ plantId }) {
                     <TabsContent value="medicinal-uses">
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-green-800">
+                                <CardTitle className="text-neutral-800">
                                     Medicinal Uses
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <ul className="list-disc pl-5 text-green-700">
+                                <ul className="list-disc pl-5 text-neutral-700">
                                     {plant.medicinalUses.map((use, index) => (
                                         <li key={index}>{use}</li>
                                     ))}
@@ -149,7 +147,7 @@ export default function PlantDetails({ plantId }) {
                     <TabsContent value="growing">
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-green-800">
+                                <CardTitle className="text-neutral-800">
                                     Growing Requirements
                                 </CardTitle>
                             </CardHeader>
@@ -157,21 +155,21 @@ export default function PlantDetails({ plantId }) {
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     <div className="flex items-center">
                                         <Droplet className="h-6 w-6 text-blue-500 mr-2" />
-                                        <span className="text-green-700">
+                                        <span className="text-neutral-700">
                                             Water:{" "}
                                             {plant.growingRequirements.water}
                                         </span>
                                     </div>
                                     <div className="flex items-center">
                                         <Sun className="h-6 w-6 text-yellow-500 mr-2" />
-                                        <span className="text-green-700">
+                                        <span className="text-neutral-700">
                                             Sunlight:{" "}
                                             {plant.growingRequirements.sunlight}
                                         </span>
                                     </div>
                                     <div className="flex items-center">
                                         <Sprout className="h-6 w-6 text-green-500 mr-2" />
-                                        <span className="text-green-700">
+                                        <span className="text-neutral-700">
                                             Soil:{" "}
                                             {plant.growingRequirements.soil}
                                         </span>
@@ -183,12 +181,12 @@ export default function PlantDetails({ plantId }) {
                     <TabsContent value="care">
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-green-800">
+                                <CardTitle className="text-neutral-800">
                                     Care Instructions
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <ul className="list-disc pl-5 text-green-700">
+                                <ul className="list-disc pl-5 text-neutral-700">
                                     {plant.careInstructions.map(
                                         (instruction, index) => (
                                             <li key={index}>{instruction}</li>
@@ -201,18 +199,18 @@ export default function PlantDetails({ plantId }) {
                     <TabsContent value="diy-remedies">
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-green-800">
+                                <CardTitle className="text-neutral-800">
                                     DIY Remedies
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
                                 {plant.diyRemedies.map((remedy, index) => (
                                     <div key={index} className="mb-4 last:mb-0">
-                                        <h4 className="text-lg font-semibold text-green-700 mb-2 flex items-center">
+                                        <h4 className="text-lg font-semibold text-neutral-700 mb-2 flex items-center">
                                             <Beaker className="h-5 w-5 mr-2" />
                                             {remedy.name}
                                         </h4>
-                                        <p className="text-green-600 pl-7">
+                                        <p className="text-neutral-600 pl-7">
                                             {remedy.instructions}
                                         </p>
                                     </div>
@@ -222,7 +220,7 @@ export default function PlantDetails({ plantId }) {
                     </TabsContent>
                 </Tabs>
 
-                <div className="text-center text-green-600 text-sm">
+                <div className="text-center text-neutral-800 text-sm">
                     <p>
                         Always consult with a healthcare professional before
                         using any herbal remedies.

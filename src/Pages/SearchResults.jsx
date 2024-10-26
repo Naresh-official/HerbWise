@@ -132,17 +132,17 @@ export default function SearchResults() {
         });
 
     return (
-        <div className="min-h-screen bg-green-50 p-6">
+        <div className="min-h-screen p-6">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row gap-6">
                     {/* Sidebar Filters */}
                     <aside className="w-full md:w-64 bg-white p-4 rounded-lg shadow-md">
-                        <h2 className="text-xl font-semibold text-green-800 mb-4">
+                        <h2 className="text-xl font-semibold text-neutral-950 mb-4">
                             Filters
                         </h2>
                         {Object.entries(filters).map(([category, values]) => (
                             <div key={category} className="mb-4">
-                                <h3 className="text-lg font-medium text-green-700 mb-2 capitalize">
+                                <h3 className="text-lg font-medium text-neutral-900 mb-2 capitalize">
                                     {category.replace(/([A-Z])/g, " $1").trim()}
                                 </h3>
                                 {[
@@ -167,7 +167,7 @@ export default function SearchResults() {
                                         />
                                         <label
                                             htmlFor={`${category}-${option}`}
-                                            className="ml-2 text-sm text-green-600 capitalize"
+                                            className="ml-2 text-sm text-neutral-800 capitalize"
                                         >
                                             {option
                                                 .replace(/([A-Z])/g, " $1")
@@ -191,7 +191,7 @@ export default function SearchResults() {
                                     onChange={(e) =>
                                         setSearchTerm(e.target.value)
                                     }
-                                    className="w-full"
+                                    className="w-full border-green-700"
                                 />
                             </div>
                             <Select value={sortBy} onValueChange={setSortBy}>
@@ -222,7 +222,7 @@ export default function SearchResults() {
                                 {filteredPlants.map((plant) => (
                                     <Card
                                         key={plant.id}
-                                        className="bg-white border-green-300"
+                                        className="bg-white border-neutral-200 shadow-md"
                                     >
                                         <CardHeader>
                                             <img
@@ -235,7 +235,7 @@ export default function SearchResults() {
                                             </CardTitle>
                                         </CardHeader>
                                         <CardContent>
-                                            <CardDescription className="text-green-600">
+                                            <CardDescription className="text-neutral-800">
                                                 {plant.description}
                                             </CardDescription>
                                         </CardContent>
