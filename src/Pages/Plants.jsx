@@ -8,30 +8,57 @@ import {
 } from "@/components/ui/card";
 import axios from "axios";
 import { Button } from "@/components/ui/button.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function AllPlants() {
     const [plants, setPlants] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
+    const [noTokensLeft, setNoTokensLeft] = useState(false);
+    const navigate = useNavigate();
+
+    const tokens = [
+        import.meta.env.VITE_PERENUAL_API_TOKEN_1,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_2,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_3,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_4,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_5,
+    ];
+    const [tokenIndex, setTokenIndex] = useState(0);
 
     useEffect(() => {
-        fetchPlants();
+        if (!noTokensLeft) {
+            fetchPlants();
+        }
     }, [pageNumber]);
-    const fetchPlants = async () => {
+    const fetchPlants = async (currentTokenIndex = tokenIndex) => {
         setLoading(true);
         try {
             const { data } = await axios.get(
-                `https://perenual.com/api/species-list?key=${
-                    import.meta.env.VITE_PERENUAL_API_TOKEN
-                }&page=${pageNumber}`
+                `/api/api/species-list?key=${tokens[currentTokenIndex]}&page=${pageNumber}`
             );
             setPlants(data?.data || []);
         } catch (error) {
-            setError(
-                error?.response?.data?.["X-Response"] ||
-                    "Failed to fetch plants. Please try again later."
-            );
+            if (
+                error?.response?.data?.["X-Response"] ===
+                    "Surpassed API Rate Limit" &&
+                currentTokenIndex < tokens.length - 1
+            ) {
+                const nextIndex = (currentTokenIndex + 1) % tokens.length;
+                setTokenIndex(nextIndex);
+                await fetchPlants(nextIndex);
+            } else if (currentTokenIndex >= tokens.length - 1) {
+                setNoTokensLeft(true);
+                setError(
+                    "All tokens have been exhausted. Please try again later."
+                );
+            } else {
+                setError(
+                    error?.response?.data?.["X-Response"] ||
+                        "Failed to fetch plant details. Please try again later."
+                );
+            }
         } finally {
             setLoading(false);
         }
@@ -57,6 +84,9 @@ export default function AllPlants() {
                                 plant.default_image && (
                                     <Card
                                         key={plant.id}
+                                        onClick={() => {
+                                            navigate(`/plant/${plant.id}`);
+                                        }}
                                         className="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
                                     >
                                         <CardHeader>

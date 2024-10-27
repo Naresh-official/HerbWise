@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { Search, Filter, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
     Card,
@@ -16,7 +14,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function SearchResults() {
@@ -24,8 +22,10 @@ export default function SearchResults() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [sortBy, setSortBy] = useState("name");
+    const [noTokensLeft, setNoTokensLeft] = useState(false);
     const location = useLocation();
     const [searchQuery, setSearchQuery] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         const params = new URLSearchParams(location.search);
@@ -35,25 +35,50 @@ export default function SearchResults() {
         }
     }, [location.search]);
 
+    const tokens = [
+        import.meta.env.VITE_PERENUAL_API_TOKEN_1,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_2,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_3,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_4,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_5,
+    ];
+    const [tokenIndex, setTokenIndex] = useState(0);
+
     useEffect(() => {
-        fetchPlants();
-        window.scrollTo(0, 0);
+        if (!noTokensLeft) {
+            fetchPlants();
+            window.scrollTo(0, 0);
+        }
     }, [searchQuery]);
 
-    const fetchPlants = async () => {
+    const fetchPlants = async (currentTokenIndex = tokenIndex) => {
+        if (!searchQuery) return;
         setLoading(true);
         try {
             const { data } = await axios.get(
-                `https://perenual.com/api/species-list?key=${
-                    import.meta.env.VITE_PERENUAL_API_TOKEN
-                }&q=${searchQuery}`
+                `/api/api/species-list?key=${tokens[currentTokenIndex]}&q=${searchQuery}`
             );
             setPlants(data?.data || []);
         } catch (error) {
-            setError(
-                error?.response?.data?.["X-Response"] ||
-                    "Failed to fetch plants. Please try again later."
-            );
+            if (
+                error?.response?.data?.["X-Response"] ===
+                    "Surpassed API Rate Limit" &&
+                currentTokenIndex < tokens.length - 1
+            ) {
+                const nextIndex = (currentTokenIndex + 1) % tokens.length;
+                setTokenIndex(nextIndex);
+                await fetchPlants(nextIndex);
+            } else if (currentTokenIndex >= tokens.length - 1) {
+                setNoTokensLeft(true); // All tokens exhausted
+                setError(
+                    "All tokens have been exhausted. Please try again later."
+                );
+            } else {
+                setError(
+                    error?.response?.data?.["X-Response"] ||
+                        "Failed to fetch plant details. Please try again later."
+                );
+            }
         } finally {
             setLoading(false);
         }
@@ -75,11 +100,11 @@ export default function SearchResults() {
                                     onChange={(e) =>
                                         setSearchQuery(e.target.value)
                                     }
-                                    className="w-full border-green-700"
+                                    className="w-full border-green-700 dark:border-green-800 dark:bg-neutral-950 text-white"
                                 />
                             </div>
                             <Select value={sortBy} onValueChange={setSortBy}>
-                                <SelectTrigger className="w-full sm:w-[180px]">
+                                <SelectTrigger className="w-full sm:w-[180px] dark:text-white dark:border-green-800">
                                     <SelectValue placeholder="Sort by" />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -106,7 +131,10 @@ export default function SearchResults() {
                                 {plants.map((plant) => (
                                     <Card
                                         key={plant.id}
-                                        className="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
+                                        onClick={() =>
+                                            navigate(`/plant/${plant.id}`)
+                                        }
+                                        className="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 shadow-md hover:shadow-xl dark:shadow-neutral-900 hover:scale-105 transition-all duration-300"
                                     >
                                         <CardHeader>
                                             <img

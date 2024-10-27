@@ -8,62 +8,97 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-export default function PlantDetails({ plantId }) {
+export default function PlantDetails() {
     const [plant, setPlant] = useState(null);
+    const [careGuide, setCareGuide] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [noTokensLeft, setNoTokensLeft] = useState(false);
+    const plantId = useParams().id;
+
+    const tokens = [
+        import.meta.env.VITE_PERENUAL_API_TOKEN_1,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_2,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_3,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_4,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_5,
+    ];
+    const [tokenIndex, setTokenIndex] = useState(0);
 
     useEffect(() => {
-        fetchPlantDetails(plantId);
-    }, [plantId]);
+        if (!noTokensLeft) {
+            // Check if tokens are exhausted
+            fetchPlantDetails(plantId);
+            fetchCareGuide(plantId);
+        }
+    }, [plantId, noTokensLeft]);
 
-    const fetchPlantDetails = async (id) => {
+    const fetchPlantDetails = async (id, currentTokenIndex = tokenIndex) => {
+        if (noTokensLeft) return; // Stop if no tokens left
+
         setLoading(true);
         try {
-            // Simulating API call with setTimeout
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            const data = {
-                id: 1,
-                name: "Echinacea",
-                scientificName: "Echinacea purpurea",
-                image: "/placeholder.svg",
-                description:
-                    "Echinacea is a popular herb known for its immune-boosting properties. It's native to North America and has been used in traditional medicine for centuries.",
-                medicinalUses: [
-                    "Boosts immune system",
-                    "Reduces cold and flu symptoms",
-                    "May help with pain relief",
-                    "Potential anti-inflammatory effects",
-                ],
-                growingRequirements: {
-                    water: "Moderate",
-                    sunlight: "Full sun to partial shade",
-                    soil: "Well-draining, slightly acidic soil",
-                },
-                careInstructions: [
-                    "Plant in spring or fall",
-                    "Space plants 1-3 feet apart",
-                    "Water deeply once a week",
-                    "Deadhead flowers to promote blooming",
-                    "Divide plants every 3-4 years",
-                ],
-                diyRemedies: [
-                    {
-                        name: "Echinacea Tea",
-                        instructions:
-                            "Steep 1-2 teaspoons of dried echinacea root or leaves in hot water for 10-15 minutes. Strain and drink up to 3 times daily.",
-                    },
-                    {
-                        name: "Echinacea Tincture",
-                        instructions:
-                            "Mix 1-2 ml of echinacea tincture with water or juice. Take 3 times daily at the onset of cold or flu symptoms.",
-                    },
-                ],
-            };
-            setPlant(data);
+            const { data } = await axios.get(
+                `/api/api/species/details/${id}?key=${tokens[currentTokenIndex]}`
+            );
+            setPlant(data || []);
         } catch (error) {
-            setError("Failed to fetch plant details. Please try again later.");
+            if (
+                error?.response?.data?.["X-Response"] ===
+                    "Surpassed API Rate Limit" &&
+                currentTokenIndex < tokens.length - 1
+            ) {
+                const nextIndex = currentTokenIndex + 1;
+                setTokenIndex(nextIndex); // Update state with next token
+                await fetchPlantDetails(id, nextIndex);
+            } else if (currentTokenIndex >= tokens.length - 1) {
+                setNoTokensLeft(true); // All tokens exhausted
+                setError(
+                    "All tokens have been exhausted. Please try again later."
+                );
+            } else {
+                setError(
+                    error?.response?.data?.["X-Response"] ||
+                        "Failed to fetch plant details. Please try again later."
+                );
+            }
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const fetchCareGuide = async (id, currentTokenIndex = tokenIndex) => {
+        if (noTokensLeft) return; // Stop if no tokens left
+
+        setLoading(true);
+        try {
+            const { data } = await axios.get(
+                `/api/api/species-care-guide-list?species_id=${id}&key=${tokens[currentTokenIndex]}`
+            );
+            setCareGuide(data?.data?.[0]?.section || []);
+        } catch (error) {
+            if (
+                error?.response?.data?.["X-Response"] ===
+                    "Surpassed API Rate Limit" &&
+                currentTokenIndex < tokens.length - 1
+            ) {
+                const nextIndex = currentTokenIndex + 1;
+                setTokenIndex(nextIndex); // Update state with next token
+                await fetchCareGuide(id, nextIndex);
+            } else if (currentTokenIndex >= tokens.length - 1) {
+                setNoTokensLeft(true); // All tokens exhausted
+                setError(
+                    "All tokens have been exhausted. Please try again later."
+                );
+            } else {
+                setError(
+                    error?.response?.data?.["X-Response"] ||
+                        "Failed to fetch care guide. Please try again later."
+                );
+            }
         } finally {
             setLoading(false);
         }
@@ -89,23 +124,43 @@ export default function PlantDetails({ plantId }) {
         );
     }
 
+    if (loading) {
+        return (
+            <div className="text-center text-green-700 p-8">
+                Loading plant details...
+            </div>
+        );
+    }
+
+    if (error) {
+        return <div className="text-center text-red-600 p-8">{error}</div>;
+    }
+
+    if (!plant) {
+        return (
+            <div className="text-center text-green-700 p-8">
+                No plant details found.
+            </div>
+        );
+    }
+
     return (
-        <div className="min-h-screen bg-green-50 p-6">
+        <div className="min-h-screen p-6">
             <div className="max-w-4xl mx-auto">
-                <Card className="bg-white border-neutral-300 mb-8">
+                <Card className="border-neutral-300 dark:bg-neutral-900 mb-8">
                     <CardHeader>
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                             <div>
-                                <CardTitle className="text-3xl font-bold text-green-800">
-                                    {plant.name}
+                                <CardTitle className="text-3xl font-bold text-green-800 dark:text-green-600">
+                                    {plant?.common_name}
                                 </CardTitle>
-                                <CardDescription className="text-xl text-green-600 mt-2">
-                                    {plant.scientificName}
+                                <CardDescription className="text-xl text-green-700 mt-2">
+                                    {plant?.scientific_name?.[0]}
                                 </CardDescription>
                             </div>
                             <img
-                                src={plant.image}
-                                alt={plant.name}
+                                src={plant?.default_image?.original_url}
+                                alt={plant?.common_name}
                                 className="w-full md:w-48 h-48 object-cover rounded-lg mt-4 md:mt-0"
                             />
                         </div>
@@ -137,7 +192,7 @@ export default function PlantDetails({ plantId }) {
                             </CardHeader>
                             <CardContent>
                                 <ul className="list-disc pl-5 text-neutral-700">
-                                    {plant.medicinalUses.map((use, index) => (
+                                    {plant?.medicinalUses?.map((use, index) => (
                                         <li key={index}>{use}</li>
                                     ))}
                                 </ul>
@@ -152,27 +207,40 @@ export default function PlantDetails({ plantId }) {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <div className="flex items-center">
-                                        <Droplet className="h-6 w-6 text-blue-500 mr-2" />
-                                        <span className="text-neutral-700">
-                                            Water:{" "}
-                                            {plant.growingRequirements.water}
-                                        </span>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="flex flex-col space-y-5">
+                                        <div className="flex items-center">
+                                            <Droplet className="h-6 w-6 text-blue-500 mr-2" />
+                                            <span className="text-neutral-900">
+                                                Water: {plant?.watering}
+                                            </span>
+                                        </div>
+                                        <p className="text-sm text-neutral-700">
+                                            {
+                                                careGuide.filter(
+                                                    (guide) =>
+                                                        guide.type ===
+                                                        "watering"
+                                                )?.[0]?.description
+                                            }
+                                        </p>
                                     </div>
-                                    <div className="flex items-center">
-                                        <Sun className="h-6 w-6 text-yellow-500 mr-2" />
-                                        <span className="text-neutral-700">
-                                            Sunlight:{" "}
-                                            {plant.growingRequirements.sunlight}
-                                        </span>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <Sprout className="h-6 w-6 text-green-500 mr-2" />
-                                        <span className="text-neutral-700">
-                                            Soil:{" "}
-                                            {plant.growingRequirements.soil}
-                                        </span>
+                                    <div className="flex flex-col space-y-5">
+                                        <div className="flex items-center">
+                                            <Sun className="h-6 w-6 text-yellow-500 mr-2" />
+                                            <span className="text-neutral-900">
+                                                Sunlight: {plant?.sunlight?.[0]}
+                                            </span>
+                                        </div>
+                                        <p className="text-sm text-neutral-700">
+                                            {
+                                                careGuide?.filter(
+                                                    (guide) =>
+                                                        guide.type ===
+                                                        "sunlight"
+                                                )?.[0]?.description
+                                            }
+                                        </p>
                                     </div>
                                 </div>
                             </CardContent>
@@ -186,13 +254,26 @@ export default function PlantDetails({ plantId }) {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <ul className="list-disc pl-5 text-neutral-700">
-                                    {plant.careInstructions.map(
-                                        (instruction, index) => (
-                                            <li key={index}>{instruction}</li>
-                                        )
-                                    )}
-                                </ul>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <p>Type : {plant?.type}</p>
+                                    <p>Cycle : {plant?.cycle}</p>
+                                    <p>
+                                        Maintenance :{" "}
+                                        {plant?.maintenance === null
+                                            ? "N/A"
+                                            : plant?.maintenance}
+                                    </p>
+                                    <p>Care Level : {plant?.care_level}</p>
+                                    <p>Growth Rate : {plant?.growth_rate}</p>
+                                    <p>
+                                        Indoor :{" "}
+                                        {plant?.indoor === false ? "No" : "Yes"}
+                                    </p>
+                                    <p>
+                                        Fruits :{" "}
+                                        {plant?.fruits === false ? "No" : "Yes"}
+                                    </p>
+                                </div>
                             </CardContent>
                         </Card>
                     </TabsContent>
@@ -204,17 +285,29 @@ export default function PlantDetails({ plantId }) {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                {plant.diyRemedies.map((remedy, index) => (
-                                    <div key={index} className="mb-4 last:mb-0">
-                                        <h4 className="text-lg font-semibold text-neutral-700 mb-2 flex items-center">
-                                            <Beaker className="h-5 w-5 mr-2" />
-                                            {remedy.name}
-                                        </h4>
-                                        <p className="text-neutral-600 pl-7">
-                                            {remedy.instructions}
-                                        </p>
-                                    </div>
-                                ))}
+                                <div>
+                                    <p>
+                                        Purning Month :{" "}
+                                        {plant?.pruning?.map((month) => (
+                                            <span>{month}</span>
+                                        ))}
+                                    </p>
+                                    <p>
+                                        Purnig Frequency :{" "}
+                                        {plant?.pruning_count.amount} times{" "}
+                                        {plant?.pruning_count.interval}
+                                    </p>
+                                </div>
+                                <div className="mt-4 text-neutral-700 text-sm">
+                                    {/* <p>
+                                        {
+                                            careGuide?.filter(
+                                                (guide) =>
+                                                    guide.type === "pruning"
+                                            )?.[0]?.description
+                                        }
+                                    </p> */}
+                                </div>
                             </CardContent>
                         </Card>
                     </TabsContent>

@@ -40,7 +40,7 @@ export default function HomePage() {
                     sustainability.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                    <Card className="bg-green-100 dark:bg-neutral-950 border-green-300 dark:border-green-500">
+                    <Card className="bg-green-100 dark:bg-neutral-900 border-green-300 dark:border-green-500">
                         <CardHeader>
                             <Leaf className="h-8 w-8 text-green-600 mb-2" />
                             <CardTitle className="text-green-700 dark:text-white">
@@ -55,7 +55,7 @@ export default function HomePage() {
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className="bg-green-100 dark:bg-neutral-950 border-green-300 dark:border-green-500">
+                    <Card className="bg-green-100 dark:bg-neutral-900 border-green-300 dark:border-green-500">
                         <CardHeader>
                             <BookOpen className="h-8 w-8 text-green-600 mb-2" />
                             <CardTitle className="text-green-700 dark:text-white">
@@ -70,7 +70,7 @@ export default function HomePage() {
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className="bg-green-100 dark:bg-neutral-950 border-green-300 dark:border-green-500">
+                    <Card className="bg-green-100 dark:bg-neutral-900 border-green-300 dark:border-green-500">
                         <CardHeader>
                             <Sprout className="h-8 w-8 text-green-600 mb-2" />
                             <CardTitle className="text-green-700 dark:text-white">
@@ -120,7 +120,10 @@ export default function HomePage() {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {featuredPlants.map((plant, index) => (
-                        <Card key={index} className="bg-white border-green-300">
+                        <Card
+                            key={index}
+                            className="bg-white dark:bg-neutral-900 border-green-300"
+                        >
                             <CardHeader>
                                 <CardTitle className="text-green-700 dark:text-white">
                                     {plant.name}
