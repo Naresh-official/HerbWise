@@ -78,6 +78,14 @@ function Navbar() {
                         </li>
                         <li>
                             <Link
+                                to="/search"
+                                className="text-green-700 dark:text-white hover:text-green-900"
+                            >
+                                Search
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
                                 to="/all-plants"
                                 className="text-green-700 dark:text-white hover:text-green-900"
                             >
@@ -90,14 +98,6 @@ function Navbar() {
                                 className="text-green-700 dark:text-white hover:text-green-900"
                             >
                                 About
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="#"
-                                className="text-green-700 dark:text-white hover:text-green-900"
-                            >
-                                Contact
                             </Link>
                         </li>
                     </ul>

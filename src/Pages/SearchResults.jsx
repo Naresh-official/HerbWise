@@ -42,8 +42,14 @@ export default function SearchResults() {
         import.meta.env.VITE_PERENUAL_API_TOKEN_4,
         import.meta.env.VITE_PERENUAL_API_TOKEN_5,
         import.meta.env.VITE_PERENUAL_API_TOKEN_6,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_7,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_8,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_9,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_10,
     ];
-    const [tokenIndex, setTokenIndex] = useState(0);
+    const [tokenIndex, setTokenIndex] = useState(
+        sessionStorage.getItem("tokenIndex") || 0
+    );
 
     useEffect(() => {
         if (!noTokensLeft) {
@@ -59,6 +65,7 @@ export default function SearchResults() {
             const { data } = await axios.get(
                 `/api/api/species-list?key=${tokens[currentTokenIndex]}&q=${searchQuery}`
             );
+            sessionStorage.setItem("tokenIndex", currentTokenIndex);
             setPlants(data?.data || []);
         } catch (error) {
             if (

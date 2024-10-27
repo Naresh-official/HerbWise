@@ -26,8 +26,14 @@ export default function PlantDetails() {
         import.meta.env.VITE_PERENUAL_API_TOKEN_4,
         import.meta.env.VITE_PERENUAL_API_TOKEN_5,
         import.meta.env.VITE_PERENUAL_API_TOKEN_6,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_7,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_8,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_9,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_10,
     ];
-    const [tokenIndex, setTokenIndex] = useState(0);
+    const [tokenIndex, setTokenIndex] = useState(
+        sessionStorage.getItem("tokenIndex") || 0
+    );
 
     useEffect(() => {
         if (!noTokensLeft) {
@@ -37,13 +43,13 @@ export default function PlantDetails() {
         }
     }, [plantId, noTokensLeft]);
     const fetchPlantDetails = async (id, currentTokenIndex = tokenIndex) => {
-        if (noTokensLeft) return; // Stop if no tokens left
-
+        if (noTokensLeft) return;
         setLoading(true);
         try {
             const { data } = await axios.get(
                 `/api/api/species/details/${id}?key=${tokens[currentTokenIndex]}`
             );
+            sessionStorage.setItem("tokenIndex", currentTokenIndex);
             setPlant(data || []);
         } catch (error) {
             if (
@@ -176,25 +182,25 @@ export default function PlantDetails() {
                     <TabsList className="grid w-full grid-cols-4">
                         <TabsTrigger
                             value="medicinal-uses"
-                            className="data-[state=active]:dark:text-neutral-50 data-[state=active]:dark:bg-green-600"
+                            className="data-[state=active]:dark:text-neutral-50 data-[state=active]:bg-green-600 data-[state=active]:text-neutral-50 data-[state=active]:dark:bg-green-600"
                         >
                             Medicinal Uses
                         </TabsTrigger>
                         <TabsTrigger
                             value="growing"
-                            className="data-[state=active]:dark:text-neutral-50 data-[state=active]:dark:bg-green-600"
+                            className="data-[state=active]:dark:text-neutral-50 data-[state=active]:bg-green-600 data-[state=active]:text-neutral-50 data-[state=active]:dark:bg-green-600"
                         >
                             Growing
                         </TabsTrigger>
                         <TabsTrigger
                             value="care"
-                            className="data-[state=active]:dark:text-neutral-50 data-[state=active]:dark:bg-green-600"
+                            className="data-[state=active]:dark:text-neutral-50 data-[state=active]:bg-green-600 data-[state=active]:text-neutral-50 data-[state=active]:dark:bg-green-600"
                         >
                             Care
                         </TabsTrigger>
                         <TabsTrigger
                             value="diy-remedies"
-                            className="data-[state=active]:dark:text-neutral-50 data-[state=active]:dark:bg-green-600"
+                            className="data-[state=active]:dark:text-neutral-50 data-[state=active]:bg-green-600 data-[state=active]:text-neutral-50 data-[state=active]:dark:bg-green-600"
                         >
                             DIY Remedies
                         </TabsTrigger>
@@ -312,11 +318,6 @@ export default function PlantDetails() {
                                                 </span>
                                             )
                                         )}
-                                    </p>
-                                    <p>
-                                        Purnig Frequency :{" "}
-                                        {plant?.pruning_count.amount} times{" "}
-                                        {plant?.pruning_count.interval}
                                     </p>
                                 </div>
                                 <div className="mt-4 text-neutral-700 dark:text-neutral-300 text-sm">

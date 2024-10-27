@@ -10,6 +10,7 @@ import SearchResults from "./Pages/SearchResults.jsx";
 import PlantDetails from "./Pages/PlantDetails.jsx";
 import About from "./Pages/About.jsx";
 import AllPlants from "./Pages/Plants.jsx";
+import NotFound from "./Pages/NotFound.jsx";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
                 path: "/all-plants",
                 element: <AllPlants />,
             },
+            {
+                path: "*",
+                element: <NotFound />,
+            }
         ],
     },
 ]);
