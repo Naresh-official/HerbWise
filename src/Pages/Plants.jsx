@@ -43,7 +43,9 @@ export default function AllPlants() {
         setLoading(true);
         try {
             const { data } = await axios.get(
-                `/api/api/species-list?key=${tokens[currentTokenIndex]}&page=${pageNumber}`
+                `${import.meta.env.VITE_API_BASE_URL}/api/species-list?key=${
+                    tokens[currentTokenIndex]
+                }&page=${pageNumber}`
             );
             sessionStorage.setItem("tokenIndex", currentTokenIndex);
             setPlants(data?.data || []);

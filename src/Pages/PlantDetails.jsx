@@ -42,12 +42,15 @@ export default function PlantDetails() {
             fetchCareGuide(plantId);
         }
     }, [plantId, noTokensLeft]);
+
     const fetchPlantDetails = async (id, currentTokenIndex = tokenIndex) => {
         if (noTokensLeft) return;
         setLoading(true);
         try {
             const { data } = await axios.get(
-                `/api/api/species/details/${id}?key=${tokens[currentTokenIndex]}`
+                `${
+                    import.meta.env.VITE_API_BASE_URL
+                }/api/species/details/${id}?key=${tokens[currentTokenIndex]}`
             );
             sessionStorage.setItem("tokenIndex", currentTokenIndex);
             setPlant(data || []);
@@ -82,7 +85,7 @@ export default function PlantDetails() {
         setLoading(true);
         try {
             const { data } = await axios.get(
-                `/api/api/species-care-guide-list?species_id=${id}&key=${tokens[currentTokenIndex]}`
+                `${import.meta.env.VITE_API_BASE_URL}/api/species-care-guide-list?species_id=${id}&key=${tokens[currentTokenIndex]}`
             );
             setCareGuide(data?.data?.[0]?.section || []);
         } catch (error) {

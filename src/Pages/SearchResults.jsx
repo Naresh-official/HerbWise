@@ -63,7 +63,9 @@ export default function SearchResults() {
         setLoading(true);
         try {
             const { data } = await axios.get(
-                `/api/api/species-list?key=${tokens[currentTokenIndex]}&q=${searchQuery}`
+                `${import.meta.env.VITE_API_BASE_URL}/api/species-list?key=${
+                    tokens[currentTokenIndex]
+                }&q=${searchQuery}`
             );
             sessionStorage.setItem("tokenIndex", currentTokenIndex);
             setPlants(data?.data || []);

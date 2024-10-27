@@ -13,7 +13,7 @@ export default defineConfig({
         host: "0.0.0.0",
         proxy: {
             "/api": {
-                target: "https://perenual.com", // Base URL for the API
+                target: "https://perenual.com",
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/api/, ""),
             },
