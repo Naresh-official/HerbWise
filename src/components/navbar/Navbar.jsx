@@ -111,7 +111,7 @@ function Navbar() {
                             </SheetTrigger>
                             <SheetContent
                                 aria-describedby="menu-description"
-                                className="w-64"
+                                className="w-64 max-w-full"
                             >
                                 {/* Set a fixed width for consistent sizing */}
                                 <SheetHeader>
@@ -148,6 +148,13 @@ function Navbar() {
                                         Home
                                     </Link>
                                     <Link
+                                        to="/search"
+                                        className="text-green-700 dark:text-white hover:text-green-900"
+                                        onClick={handleCloseSheet}
+                                    >
+                                        Search
+                                    </Link>
+                                    <Link
                                         to="/all-plants"
                                         className="text-green-700 dark:text-white hover:text-green-900"
                                         onClick={handleCloseSheet}
@@ -160,13 +167,6 @@ function Navbar() {
                                         onClick={handleCloseSheet}
                                     >
                                         About
-                                    </Link>
-                                    <Link
-                                        to="#"
-                                        className="text-green-700 dark:text-white hover:text-green-900"
-                                        onClick={handleCloseSheet}
-                                    >
-                                        Contact
                                     </Link>
                                 </div>
                             </SheetContent>

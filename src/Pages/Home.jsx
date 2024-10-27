@@ -25,11 +25,11 @@ export default function HomePage() {
     return (
         <main className="mx-auto px-4 py-8">
             <Spotlight
-                className="-top-40 left-0 md:left-60 md:-top-20 dark:block hidden"
+                className="-top-40 left-0 md:left-60 md:-top-20 dark:md:block hidden"
                 fill="green"
             />
             <section className="text-center mb-12 w-full mx-auto bg-white dark:bg-neutral-950 rounded-lg p-8 shadow-md">
-                <h2 className="text-5xl w-1/2 mx-auto font-bold text-green-800 dark:text-neutral-50 mb-4">
+                <h2 className="md:text-5xl text-4xl md:w-1/2 w-full mx-auto font-bold text-green-800 dark:text-neutral-50 mb-4">
                     Discover the Power of Medicinal Plants
                 </h2>
                 <p className="text-lg text-green-700 dark:text-green-200 max-w-xl mx-auto mb-8">
