@@ -8,7 +8,6 @@ import Layout from "./Layout.jsx";
 import Home from "./Pages/Home.jsx";
 import SearchResults from "./Pages/SearchResults.jsx";
 import PlantDetails from "./Pages/PlantDetails.jsx";
-import IdentificationPage from "./Pages/Identify.jsx";
 import About from "./Pages/About.jsx";
 import AllPlants from "./Pages/Plants.jsx";
 
@@ -28,10 +27,6 @@ const router = createBrowserRouter([
             {
                 path: "/plant/:id",
                 element: <PlantDetails />,
-            },
-            {
-                path: "/identify",
-                element: <IdentificationPage />,
             },
             {
                 path: "/about",

@@ -41,6 +41,7 @@ export default function SearchResults() {
         import.meta.env.VITE_PERENUAL_API_TOKEN_3,
         import.meta.env.VITE_PERENUAL_API_TOKEN_4,
         import.meta.env.VITE_PERENUAL_API_TOKEN_5,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_6,
     ];
     const [tokenIndex, setTokenIndex] = useState(0);
 

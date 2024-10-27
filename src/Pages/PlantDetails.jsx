@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Droplet, Sun, Sprout, Leaf, Beaker } from "lucide-react";
+import { Droplet, Sun } from "lucide-react";
 import {
     Card,
     CardContent,
@@ -25,6 +25,7 @@ export default function PlantDetails() {
         import.meta.env.VITE_PERENUAL_API_TOKEN_3,
         import.meta.env.VITE_PERENUAL_API_TOKEN_4,
         import.meta.env.VITE_PERENUAL_API_TOKEN_5,
+        import.meta.env.VITE_PERENUAL_API_TOKEN_6,
     ];
     const [tokenIndex, setTokenIndex] = useState(0);
 
@@ -35,7 +36,6 @@ export default function PlantDetails() {
             fetchCareGuide(plantId);
         }
     }, [plantId, noTokensLeft]);
-
     const fetchPlantDetails = async (id, currentTokenIndex = tokenIndex) => {
         if (noTokensLeft) return; // Stop if no tokens left
 
@@ -166,7 +166,7 @@ export default function PlantDetails() {
                         </div>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-neutral-800 mb-4">
+                        <p className="text-neutral-800 dark:text-neutral-300 mb-4">
                             {plant.description}
                         </p>
                     </CardContent>
@@ -174,19 +174,35 @@ export default function PlantDetails() {
 
                 <Tabs defaultValue="medicinal-uses" className="mb-8">
                     <TabsList className="grid w-full grid-cols-4">
-                        <TabsTrigger value="medicinal-uses">
+                        <TabsTrigger
+                            value="medicinal-uses"
+                            className="data-[state=active]:dark:text-neutral-50 data-[state=active]:dark:bg-green-600"
+                        >
                             Medicinal Uses
                         </TabsTrigger>
-                        <TabsTrigger value="growing">Growing</TabsTrigger>
-                        <TabsTrigger value="care">Care</TabsTrigger>
-                        <TabsTrigger value="diy-remedies">
+                        <TabsTrigger
+                            value="growing"
+                            className="data-[state=active]:dark:text-neutral-50 data-[state=active]:dark:bg-green-600"
+                        >
+                            Growing
+                        </TabsTrigger>
+                        <TabsTrigger
+                            value="care"
+                            className="data-[state=active]:dark:text-neutral-50 data-[state=active]:dark:bg-green-600"
+                        >
+                            Care
+                        </TabsTrigger>
+                        <TabsTrigger
+                            value="diy-remedies"
+                            className="data-[state=active]:dark:text-neutral-50 data-[state=active]:dark:bg-green-600"
+                        >
                             DIY Remedies
                         </TabsTrigger>
                     </TabsList>
                     <TabsContent value="medicinal-uses">
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-neutral-800">
+                                <CardTitle className="text-neutral-800 dark:text-neutral-300">
                                     Medicinal Uses
                                 </CardTitle>
                             </CardHeader>
@@ -202,7 +218,7 @@ export default function PlantDetails() {
                     <TabsContent value="growing">
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-neutral-800">
+                                <CardTitle className="text-neutral-800 dark:text-neutral-300">
                                     Growing Requirements
                                 </CardTitle>
                             </CardHeader>
@@ -211,13 +227,13 @@ export default function PlantDetails() {
                                     <div className="flex flex-col space-y-5">
                                         <div className="flex items-center">
                                             <Droplet className="h-6 w-6 text-blue-500 mr-2" />
-                                            <span className="text-neutral-900">
+                                            <span className="text-neutral-900 dark:text-neutral-300">
                                                 Water: {plant?.watering}
                                             </span>
                                         </div>
-                                        <p className="text-sm text-neutral-700">
+                                        <p className="text-sm text-neutral-700 dark:text-neutral-300">
                                             {
-                                                careGuide.filter(
+                                                careGuide?.filter(
                                                     (guide) =>
                                                         guide.type ===
                                                         "watering"
@@ -228,11 +244,11 @@ export default function PlantDetails() {
                                     <div className="flex flex-col space-y-5">
                                         <div className="flex items-center">
                                             <Sun className="h-6 w-6 text-yellow-500 mr-2" />
-                                            <span className="text-neutral-900">
+                                            <span className="text-neutral-900 dark:text-neutral-300">
                                                 Sunlight: {plant?.sunlight?.[0]}
                                             </span>
                                         </div>
-                                        <p className="text-sm text-neutral-700">
+                                        <p className="text-sm text-neutral-700 dark:text-neutral-300">
                                             {
                                                 careGuide?.filter(
                                                     (guide) =>
@@ -249,7 +265,7 @@ export default function PlantDetails() {
                     <TabsContent value="care">
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-neutral-800">
+                                <CardTitle className="text-neutral-800 dark:text-neutral-300">
                                     Care Instructions
                                 </CardTitle>
                             </CardHeader>
@@ -280,17 +296,22 @@ export default function PlantDetails() {
                     <TabsContent value="diy-remedies">
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-neutral-800">
+                                <CardTitle className="text-neutral-800 dark:text-neutral-300">
                                     DIY Remedies
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <div>
                                     <p>
-                                        Purning Month :{" "}
-                                        {plant?.pruning?.map((month) => (
-                                            <span>{month}</span>
-                                        ))}
+                                        Pruning Month:{" "}
+                                        {plant?.pruning_month?.map(
+                                            (month, index) => (
+                                                <span key={index}>
+                                                    {month}
+                                                    {", "}
+                                                </span>
+                                            )
+                                        )}
                                     </p>
                                     <p>
                                         Purnig Frequency :{" "}
@@ -298,15 +319,15 @@ export default function PlantDetails() {
                                         {plant?.pruning_count.interval}
                                     </p>
                                 </div>
-                                <div className="mt-4 text-neutral-700 text-sm">
-                                    {/* <p>
+                                <div className="mt-4 text-neutral-700 dark:text-neutral-300 text-sm">
+                                    <p>
                                         {
                                             careGuide?.filter(
                                                 (guide) =>
                                                     guide.type === "pruning"
                                             )?.[0]?.description
                                         }
-                                    </p> */}
+                                    </p>
                                 </div>
                             </CardContent>
                         </Card>
