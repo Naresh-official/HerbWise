@@ -80,13 +80,18 @@ export default function PlantDetails() {
     };
 
     const fetchCareGuide = async (id, currentTokenIndex = tokenIndex) => {
-        if (noTokensLeft) return; // Stop if no tokens left
+        if (noTokensLeft) return;
 
         setLoading(true);
         try {
             const { data } = await axios.get(
-                `${import.meta.env.VITE_API_BASE_URL}/api/species-care-guide-list?species_id=${id}&key=${tokens[currentTokenIndex]}`
+                `${
+                    import.meta.env.VITE_API_BASE_URL
+                }/api/species-care-guide-list?species_id=${id}&key=${
+                    tokens[currentTokenIndex]
+                }`
             );
+            sessionStorage.setItem("tokenIndex", currentTokenIndex);
             setCareGuide(data?.data?.[0]?.section || []);
         } catch (error) {
             if (
@@ -95,10 +100,10 @@ export default function PlantDetails() {
                 currentTokenIndex < tokens.length - 1
             ) {
                 const nextIndex = currentTokenIndex + 1;
-                setTokenIndex(nextIndex); // Update state with next token
+                setTokenIndex(nextIndex);
                 await fetchCareGuide(id, nextIndex);
             } else if (currentTokenIndex >= tokens.length - 1) {
-                setNoTokensLeft(true); // All tokens exhausted
+                setNoTokensLeft(true);
                 setError(
                     "All tokens have been exhausted. Please try again later."
                 );
@@ -170,7 +175,7 @@ export default function PlantDetails() {
                             <img
                                 src={plant?.default_image?.original_url}
                                 alt={plant?.common_name}
-                                className="w-full md:w-48 h-48 object-cover rounded-lg mt-4 md:mt-0"
+                                className="w-full md:w-48 h-56 object-cover rounded-lg mt-4 md:mt-0"
                             />
                         </div>
                     </CardHeader>
@@ -182,7 +187,7 @@ export default function PlantDetails() {
                 </Card>
 
                 <Tabs defaultValue="medicinal-uses" className="mb-8">
-                    <TabsList className="grid w-full grid-cols-4">
+                    <TabsList className="grid w-full md:grid-cols-4 grid-cols-2">
                         <TabsTrigger
                             value="medicinal-uses"
                             className="data-[state=active]:dark:text-neutral-50 data-[state=active]:bg-green-600 data-[state=active]:text-neutral-50 data-[state=active]:dark:bg-green-600"
