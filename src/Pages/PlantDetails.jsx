@@ -343,7 +343,7 @@ export default function PlantDetails() {
                     </TabsContent>
                 </Tabs>
 
-                <div className="text-center text-neutral-800 text-sm">
+                <div className="text-center text-neutral-800 dark:text-neutral-300 text-sm">
                     <p>
                         Always consult with a healthcare professional before
                         using any herbal remedies.
