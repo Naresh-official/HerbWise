@@ -7,13 +7,6 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -59,7 +52,7 @@ export default function SearchResults() {
     }, [searchQuery]);
 
     const fetchPlants = async (currentTokenIndex = tokenIndex) => {
-        if (!searchQuery) return;
+        if (searchQuery?.trim()?.length === 0) return;
         setLoading(true);
         try {
             const { data } = await axios.get(
@@ -110,23 +103,9 @@ export default function SearchResults() {
                                     onChange={(e) =>
                                         setSearchQuery(e.target.value)
                                     }
-                                    className="w-full border-green-700 dark:border-green-800 dark:bg-neutral-950 text-white"
+                                    className="w-full border-green-700 dark:border-green-800 dark:bg-neutral-950 text-black dark:text-white"
                                 />
                             </div>
-                            <Select value={sortBy} onValueChange={setSortBy}>
-                                <SelectTrigger className="w-full sm:w-[180px] dark:text-white dark:border-green-800">
-                                    <SelectValue placeholder="Sort by" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="name">Name</SelectItem>
-                                    <SelectItem value="benefit">
-                                        Benefit
-                                    </SelectItem>
-                                    <SelectItem value="popularity">
-                                        Popularity
-                                    </SelectItem>
-                                </SelectContent>
-                            </Select>
                         </div>
 
                         {/* Plant Cards */}
@@ -184,12 +163,6 @@ export default function SearchResults() {
                                 ))}
                             </div>
                         )}
-
-                        {/* {filteredPlants.length === 0 && !loading && !error && (
-                            <p className="text-center text-green-700">
-                                No plants found matching your criteria.
-                            </p>
-                        )} */}
                     </main>
                 </div>
             </div>

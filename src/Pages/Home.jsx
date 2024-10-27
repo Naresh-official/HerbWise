@@ -100,7 +100,7 @@ export default function HomePage() {
                             placeholder="Search plants by name or scientific name..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="flex-grow bg-white border-2 border-green-700/50 dark:border-green-500/50 text-white"
+                            className="flex-grow bg-white border-2 border-green-700/50 dark:border-green-500/50 text-black dark:text-white"
                         />
                         <Button
                             type="submit"
