@@ -15,7 +15,6 @@ import { Spotlight } from "@/components/ui/spotlight.jsx";
 export default function HomePage() {
 	const [searchQuery, setSearchQuery] = useState("");
 	const navigate = useNavigate();
-	console.log("Env Vars:", import.meta.env);
 
 	const handleSearch = (e) => {
 		e.preventDefault();

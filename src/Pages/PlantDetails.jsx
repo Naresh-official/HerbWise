@@ -148,9 +148,9 @@ export default function PlantDetails() {
 			);
 			const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 			convertMarkdownToHTML(text);
-    } catch (error) {
-      console.log(import.meta.env.VITE_GEMINIAI_URL);
-      console.log(import.meta.env.VITE_GEMINIAI_API_KEY);
+		} catch (error) {
+			console.log(import.meta.env.VITE_GEMINIAI_URL);
+			console.log(import.meta.env.VITE_GEMINIAI_API_KEY);
 			console.error("Error fetching medicinal uses:", error);
 			setError("Failed to fetch medicinal uses. Please try again later.");
 		} finally {
@@ -210,24 +210,26 @@ export default function PlantDetails() {
 					<CardHeader>
 						<div className="flex flex-col md:flex-row md:items-center md:justify-between">
 							<div>
-								<CardTitle className="text-3xl font-bold text-green-800 dark:text-green-600">
+								<CardTitle className="text-3xl font-bold text-green-800 dark:text-green-600 capitalize">
 									{plant?.common_name}
 								</CardTitle>
-								<CardDescription className="text-xl text-green-700 mt-2">
+								<CardDescription className="text-xl text-green-700 mt-2 capitalize">
 									{plant?.scientific_name?.[0]}
 								</CardDescription>
 							</div>
-							<img
-								src={plant?.default_image?.original_url}
-								alt={plant?.common_name}
-								className="w-full md:w-48 h-56 object-cover rounded-lg mt-4 md:mt-0"
-							/>
 						</div>
 					</CardHeader>
 					<CardContent>
-						<p className="text-neutral-800 dark:text-neutral-300 mb-4">
-							{plant.description}
-						</p>
+						<div className="flex flex-col md:flex-row gap-8">
+							<p className="text-neutral-800 dark:text-neutral-300 mb-4 md:w-1/2 w-full">
+								{plant.description}
+							</p>
+							<img
+								src={plant?.default_image?.original_url}
+								alt={plant?.common_name}
+								className="w-full md:w-1/2 max-h-96 object-cover rounded-lg mt-4 md:mt-0"
+							/>
+						</div>
 					</CardContent>
 				</Card>
 

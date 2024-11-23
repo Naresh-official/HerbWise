@@ -99,6 +99,7 @@ export default function SearchResults() {
 							<div className="flex-1">
 								<Input
 									type="search"
+									autoFocus
 									placeholder="Search plants..."
 									value={searchQuery}
 									onChange={(e) =>
@@ -124,7 +125,7 @@ export default function SearchResults() {
 										onClick={() =>
 											navigate(`/plant/${plant.id}`)
 										}
-										className="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 shadow-md hover:shadow-xl dark:shadow-neutral-900 hover:scale-105 transition-all duration-300"
+										className="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 shadow-md hover:shadow-xl dark:shadow-neutral-900 hover:scale-[1.02] transition-all duration-300"
 									>
 										<CardHeader>
 											<img
