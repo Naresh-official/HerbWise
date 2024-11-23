@@ -215,19 +215,17 @@ export default function PlantDetails() {
 									{plant?.scientific_name?.[0]}
 								</CardDescription>
 							</div>
-						</div>
-					</CardHeader>
-					<CardContent>
-						<div className="flex flex-col md:flex-row gap-8">
-							<p className="text-neutral-800 dark:text-neutral-300 mb-4 md:w-1/2 w-full">
-								{plant.description}
-							</p>
 							<img
 								src={plant?.default_image?.original_url}
 								alt={plant?.common_name}
-								className="w-full md:w-1/2 max-h-96 object-cover rounded-lg mt-4 md:mt-0"
+								className="w-full md:w-48 h-56 object-cover rounded-lg mt-4 md:mt-0"
 							/>
 						</div>
+					</CardHeader>
+					<CardContent>
+						<p className="text-neutral-800 dark:text-neutral-300 mb-4">
+							{plant.description}
+						</p>
 					</CardContent>
 				</Card>
 
