@@ -148,7 +148,9 @@ export default function PlantDetails() {
 			);
 			const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 			convertMarkdownToHTML(text);
-		} catch (error) {
+    } catch (error) {
+      console.log(import.meta.env.VITE_GEMINIAI_URL);
+      console.log(import.meta.env.VITE_GEMINIAI_API_KEY);
 			console.error("Error fetching medicinal uses:", error);
 			setError("Failed to fetch medicinal uses. Please try again later.");
 		} finally {
