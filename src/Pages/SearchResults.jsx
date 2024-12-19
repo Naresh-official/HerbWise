@@ -8,16 +8,13 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { useLocation, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { plantData } from "@/lib/data";
 
 export default function SearchResults() {
 	const [plants, setPlants] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
-	const [sortBy, setSortBy] = useState("name");
-	const [noTokensLeft, setNoTokensLeft] = useState(false);
-	const location = useLocation();
 	const [searchQuery, setSearchQuery] = useState("");
+	const [filteredPlants, setFilteredPlants] = useState([]);
+	const location = useLocation();
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -28,65 +25,95 @@ export default function SearchResults() {
 		}
 	}, [location.search]);
 
-	const tokens = [
-		import.meta.env.VITE_PERENUAL_API_TOKEN_1,
-		import.meta.env.VITE_PERENUAL_API_TOKEN_2,
-		import.meta.env.VITE_PERENUAL_API_TOKEN_3,
-		import.meta.env.VITE_PERENUAL_API_TOKEN_4,
-		import.meta.env.VITE_PERENUAL_API_TOKEN_5,
-		import.meta.env.VITE_PERENUAL_API_TOKEN_6,
-		import.meta.env.VITE_PERENUAL_API_TOKEN_7,
-		import.meta.env.VITE_PERENUAL_API_TOKEN_8,
-		import.meta.env.VITE_PERENUAL_API_TOKEN_9,
-		import.meta.env.VITE_PERENUAL_API_TOKEN_10,
-	];
-	const [tokenIndex, setTokenIndex] = useState(
-		sessionStorage.getItem("tokenIndex") || 0
-	);
+	useEffect(() => {
+		setPlants(plantData);
+	}, []);
 
 	useEffect(() => {
-		if (!noTokensLeft) {
-			fetchPlants();
-			window.scrollTo(0, 0);
-		}
-	}, [searchQuery]);
-
-	const fetchPlants = async (currentTokenIndex = tokenIndex) => {
-		if (searchQuery?.trim()?.length === 0) return;
-		setLoading(true);
-		try {
-			const { data } = await axios.get(
-				`${import.meta.env.VITE_API_BASE_URL}/api/species-list?key=${
-					tokens[parseInt(currentTokenIndex)]
-				}&q=${searchQuery}`
+		if (searchQuery.trim()) {
+			const filtered = plantData.filter(
+				(plant) =>
+					plant.common_name
+						?.toLowerCase()
+						.includes(searchQuery.trim().toLowerCase()) ||
+					plant.scientific_name?.some((name) =>
+						name
+							.toLowerCase()
+							.includes(searchQuery.trim().toLowerCase())
+					)
 			);
-			sessionStorage.setItem("tokenIndex", currentTokenIndex);
-			setPlants(data?.data || []);
-		} catch (error) {
-			if (
-				error?.response?.data?.["X-Response"] ===
-					"Surpassed API Rate Limit" &&
-				currentTokenIndex < tokens.length - 1
-			) {
-				const nextIndex =
-					(parseInt(currentTokenIndex) + 1) % tokens.length;
-				setTokenIndex(nextIndex);
-				await fetchPlants(nextIndex);
-			} else if (currentTokenIndex >= tokens.length - 1) {
-				setNoTokensLeft(true); // All tokens exhausted
-				setError(
-					"All tokens have been exhausted. Please try again later."
-				);
-			} else {
-				setError(
-					error?.response?.data?.["X-Response"] ||
-						"Failed to fetch plant details. Please try again later."
-				);
-			}
-		} finally {
-			setLoading(false);
+
+			setFilteredPlants(filtered);
+		} else {
+			setFilteredPlants(plants);
 		}
-	};
+	}, [searchQuery, plants]);
+
+	if (searchQuery.length < 3) {
+		return (
+			<div className="min-h-screen p-6">
+				<div className="max-w-7xl mx-auto">
+					<div className="flex flex-col md:flex-row gap-6">
+						{/* Main Content */}
+						<main className="flex-1">
+							{/* Search Input */}
+							<div className="flex flex-col sm:flex-row gap-4 mb-6">
+								<div className="flex-1">
+									<Input
+										type="search"
+										autoFocus
+										placeholder="Search plants..."
+										value={searchQuery}
+										onChange={(e) =>
+											setSearchQuery(e.target.value)
+										}
+										className="w-full border-green-700 dark:border-green-800 dark:bg-neutral-950 text-black dark:text-white"
+									/>
+								</div>
+							</div>
+
+							<div className="text-center text-green-700 p-8">
+								Please enter at least 3 characters.
+							</div>
+						</main>
+					</div>
+				</div>
+			</div>
+		);
+	}
+
+	if (filteredPlants.length === 0) {
+		return (
+			<div className="min-h-screen p-6">
+				<div className="max-w-7xl mx-auto">
+					<div className="flex flex-col md:flex-row gap-6">
+						{/* Main Content */}
+						<main className="flex-1">
+							{/* Search Input */}
+							<div className="flex flex-col sm:flex-row gap-4 mb-6">
+								<div className="flex-1">
+									<Input
+										type="search"
+										autoFocus
+										placeholder="Search plants..."
+										value={searchQuery}
+										onChange={(e) =>
+											setSearchQuery(e.target.value)
+										}
+										className="w-full border-green-700 dark:border-green-800 dark:bg-neutral-950 text-black dark:text-white"
+									/>
+								</div>
+							</div>
+
+							<div className="text-center text-green-700 p-8">
+								No results found.
+							</div>
+						</main>
+					</div>
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<div className="min-h-screen p-6">
@@ -94,7 +121,7 @@ export default function SearchResults() {
 				<div className="flex flex-col md:flex-row gap-6">
 					{/* Main Content */}
 					<main className="flex-1">
-						{/* Search and Sort Controls */}
+						{/* Search Input */}
 						<div className="flex flex-col sm:flex-row gap-4 mb-6">
 							<div className="flex-1">
 								<Input
@@ -111,15 +138,9 @@ export default function SearchResults() {
 						</div>
 
 						{/* Plant Cards */}
-						{loading ? (
-							<p className="text-center text-green-700">
-								Loading plants...
-							</p>
-						) : error ? (
-							<p className="text-center text-red-600">{error}</p>
-						) : (
+						{filteredPlants.length > 0 ? (
 							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-								{plants.map((plant) => (
+								{filteredPlants.map((plant) => (
 									<Card
 										key={plant.id}
 										onClick={() =>
@@ -129,12 +150,7 @@ export default function SearchResults() {
 									>
 										<CardHeader>
 											<img
-												src={
-													plant.default_image
-														?.medium_url ||
-													plant.default_image
-														?.original_url
-												}
+												src={plant.default_image}
 												alt={
 													plant.common_name ||
 													plant.scientific_name[0]
@@ -151,19 +167,15 @@ export default function SearchResults() {
 													Scientific Name:{" "}
 													{plant.scientific_name[0]}
 												</span>
-												<br />
-												{plant.other_name[0] && (
-													<span>
-														Other Name:
-														{plant.other_name[0]}
-													</span>
-												)}
-												<br />
 											</CardDescription>
 										</CardContent>
 									</Card>
 								))}
 							</div>
+						) : (
+							<p className="text-center text-green-700">
+								No plants found matching your criteria.
+							</p>
 						)}
 					</main>
 				</div>
