@@ -163,6 +163,13 @@ function Navbar() {
 										Search
 									</Link>
 									<Link
+										to="/image-search"
+										className="text-green-700 dark:text-white hover:text-green-900"
+										onClick={handleCloseSheet}
+									>
+										Image Search
+									</Link>
+									<Link
 										to="/all-plants"
 										className="text-green-700 dark:text-white hover:text-green-900"
 										onClick={handleCloseSheet}
