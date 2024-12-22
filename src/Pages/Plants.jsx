@@ -12,13 +12,16 @@ import { plantData } from "@/lib/data";
 
 export default function AllPlants() {
 	const [plants, setPlants] = useState([]);
-	const [pageNumber, setPageNumber] = useState(1);
+	const [pageNumber, setPageNumber] = useState(
+		sessionStorage.getItem("pageNumber") || 1
+	);
 	const itemsPerPage = 12;
 	const totalPages = Math.ceil(plantData.length / itemsPerPage);
 	const navigate = useNavigate();
 
 	// Update plants based on the current page number
 	useEffect(() => {
+		sessionStorage.setItem("pageNumber", pageNumber);
 		const startIndex = (pageNumber - 1) * itemsPerPage;
 		const endIndex = startIndex + itemsPerPage;
 		setPlants(plantData.slice(startIndex, endIndex));
@@ -86,18 +89,22 @@ export default function AllPlants() {
 						<Button
 							variant="outline"
 							className="w-10 dark:text-white"
-							onClick={() => setPageNumber((prev) => prev - 2)}
+							onClick={() =>
+								setPageNumber((prev) => Number(prev) - 2)
+							}
 						>
-							{pageNumber - 2}
+							{Number(pageNumber) - 2}
 						</Button>
 					)}
 					{pageNumber > 1 && (
 						<Button
 							variant="outline"
 							className="w-10 dark:text-white"
-							onClick={() => setPageNumber((prev) => prev - 1)}
+							onClick={() =>
+								setPageNumber((prev) => Number(prev) - 1)
+							}
 						>
-							{pageNumber - 1}
+							{Number(pageNumber) - 1}
 						</Button>
 					)}
 					<Button
@@ -110,18 +117,22 @@ export default function AllPlants() {
 						<Button
 							variant="outline"
 							className="w-10 dark:text-white"
-							onClick={() => setPageNumber((prev) => prev + 1)}
+							onClick={() =>
+								setPageNumber((prev) => Number(prev) + 1)
+							}
 						>
-							{pageNumber + 1}
+							{Number(pageNumber) + 1}
 						</Button>
 					)}
 					{pageNumber < totalPages - 1 && (
 						<Button
 							variant="outline"
 							className="w-10 dark:text-white"
-							onClick={() => setPageNumber((prev) => prev + 2)}
+							onClick={() =>
+								setPageNumber((prev) => Number(prev) + 2)
+							}
 						>
-							{pageNumber + 2}
+							{Number(pageNumber) + 2}
 						</Button>
 					)}
 					<Button

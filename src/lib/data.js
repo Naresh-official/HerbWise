@@ -359,15 +359,14 @@ export const plantData = [
 				"Thrives in full sunlight, requiring 6-8 hours of direct exposure daily. Prefers warm, tropical climates, where consistent sunlight promotes healthy growth. Planting in open spaces with ample sun ensures robust development and optimal therapeutic compound production.",
 		},
 	},
-
-	// change images from here
 	{
 		id: 11,
 		common_name: "Giloy (Guduchi)",
 		scientific_name: ["Tinospora cordifolia"],
 		description:
 			"Giloy, often referred to as 'Amrita' in Sanskrit, is a highly revered climbing shrub in Ayurvedic medicine, known for its myriad health benefits. It is celebrated for its ability to boost immunity, fight chronic fevers, detoxify the body, and enhance overall vitality. Giloy’s leaves, stem, and roots are packed with bioactive compounds that promote physical and mental well-being. Regular consumption of Giloy is believed to help fight infections, improve digestion, enhance skin health, and combat stress. This powerful herb rejuvenates bodily systems, supports detoxification, and promotes energy levels. Giloy is a vital herb for individuals seeking a holistic approach to health and wellness. As a traditional remedy, it is widely used in the treatment of fever, inflammation, digestive disorders, and chronic conditions.",
-		default_image: "https://example.com/images/giloy.jpg",
+		default_image:
+			"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT1x0GAsKmNZ1EGZw5GpY9LcKc3D_J_IuASbKuzrGeZsTSBkymb3Oywt0qn-nTZUONHVD2TcEfKMqcprW1amltpxQ",
 		medicinal_uses: [
 			{
 				"Immunity boosting":
@@ -402,7 +401,8 @@ export const plantData = [
 		scientific_name: ["Trigonella foenum-graecum"],
 		description:
 			"Fenugreek is an annual herb from South Asia, valued for its seeds and leaves. Known for managing diabetes, it is rich in soluble fiber, vitamins, and minerals. Widely used in cooking and traditional medicine, it promotes digestion and overall health while adding a unique flavor to dishes.",
-		default_image: "https://example.com/images/fenugreek.jpg",
+		default_image:
+			"https://cdn.britannica.com/37/192237-050-4C6A4CC8/fenugreek-Trigonella-foenum-graecum.jpg",
 		medicinal_uses: [
 			{
 				"Diabetes management":
@@ -437,7 +437,8 @@ export const plantData = [
 		scientific_name: ["Trigonella foenum-graecum"],
 		description:
 			"Fenugreek is an annual herb native to South Asia, known for its highly nutritious seeds and leaves. It has a long history of use in both culinary and medicinal practices. Rich in soluble fiber, vitamins, and minerals, Fenugreek is best known for managing diabetes by regulating blood sugar levels. The plant is also used to promote digestion, enhance lactation, and improve cholesterol levels. Fenugreek's unique flavor makes it a common ingredient in curries, spice blends, and teas. In addition to its health benefits, it is also prized for its ability to support digestive health, ease bloating, and act as a mild laxative. The leaves and seeds of Fenugreek are often used in home remedies, helping to maintain overall wellness and vitality.",
-		default_image: "https://example.com/images/fenugreek.jpg",
+		default_image:
+			"https://cdn.britannica.com/34/204734-050-9BCA9A53/Trunk-cinnamon-tree.jpg",
 		medicinal_uses: [
 			{
 				"Diabetes management":
@@ -472,7 +473,8 @@ export const plantData = [
 		scientific_name: ["Cinnamomum verum"],
 		description:
 			"Cinnamon, derived from the inner bark of the Cinnamomum tree, has been cherished for centuries due to its therapeutic and aromatic properties. This warm and fragrant spice is widely used in cooking and has numerous health benefits. It is most known for its ability to regulate blood sugar, making it a valuable tool in managing diabetes. Cinnamon also offers potent antioxidant properties, fighting oxidative stress and reducing the risk of chronic diseases. It helps improve heart health by reducing LDL cholesterol and promoting overall cardiovascular wellness. In addition, cinnamon has antimicrobial properties, making it effective against various infections, and it aids in digestion by stimulating gastric enzymes. Its distinct flavor adds depth to both sweet and savory dishes, making it a versatile and beneficial spice in the kitchen and in health remedies.",
-		default_image: "https://example.com/images/cinnamon.jpg",
+		default_image:
+			"https://cdn.britannica.com/34/204734-050-9BCA9A53/Trunk-cinnamon-tree.jpg",
 		medicinal_uses: [
 			{
 				"Blood sugar regulation":
@@ -507,7 +509,7 @@ export const plantData = [
 		scientific_name: ["Murraya koenigii"],
 		description:
 			"Curry leaves, native to India, are an aromatic herb used extensively in South Indian cuisine. These leaves are packed with essential nutrients like iron, calcium, vitamins, and antioxidants, making them a staple in both culinary and medicinal practices. In traditional medicine, curry leaves are revered for their ability to enhance digestion, promote healthy skin and hair, and regulate blood sugar levels. Rich in alkaloids, they are also used to manage cholesterol and support overall heart health. The leaves are commonly added to curries, stews, and chutneys, infusing dishes with a distinct flavor. In addition to their culinary uses, curry leaves are beneficial for improving digestive health, preventing premature graying, and boosting hair growth. With numerous health benefits and a rich flavor, curry leaves are an essential herb in many households.",
-		default_image: "https://example.com/images/curry_leaves.jpg",
+		default_image: "https://m.media-amazon.com/images/I/81-fyNxS16L.jpg",
 		medicinal_uses: [
 			{
 				"Digestive aid":
@@ -542,7 +544,8 @@ export const plantData = [
 		scientific_name: ["Aloe barbadensis miller"],
 		description:
 			"Aloe Vera, a succulent plant with thick, fleshy leaves, is widely recognized for its healing properties. The gel inside its leaves contains a variety of compounds that have powerful effects on skin health, digestion, and overall wellness. Aloe Vera is most commonly used in skincare products to soothe burns, cuts, and skin irritations, promoting faster healing and reducing inflammation. It also helps hydrate the skin, preventing dryness and maintaining moisture balance. In addition to its external uses, Aloe Vera is known to improve digestive health by relieving constipation and supporting gut health with its natural laxative properties. As an adaptogen, Aloe Vera helps balance various bodily functions, boosting the immune system and aiding in detoxification. Whether used topically or ingested, Aloe Vera is a versatile and beneficial plant for holistic well-being.",
-		default_image: "https://example.com/images/aloe_vera.jpg",
+		default_image:
+			"https://hips.hearstapps.com/hmg-prod/images/aloe-vera-plant-aloe-vera-plant-care-1648418646.jpg?crop=0.517xw:0.774xh;0.184xw,0.211xh&resize=640:*",
 		medicinal_uses: [
 			{
 				"Skin healing":
@@ -577,7 +580,8 @@ export const plantData = [
 		scientific_name: ["Piper nigrum"],
 		description:
 			"Black pepper, known as the 'king of spices', is widely used for its strong flavor and numerous health benefits. It contains piperine, an active compound with antioxidant and anti-inflammatory properties. Commonly used in culinary applications, black pepper also helps stimulate digestion, ease respiratory issues, and promote metabolic health. It has been valued for centuries not only as a spice but also as a medicine. Its benefits extend from improving gut health to enhancing skin conditions and reducing joint pain, making it a versatile addition to both cooking and wellness routines.",
-		default_image: "https://example.com/images/black_pepper.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/61XtSbVQ5KL._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -612,7 +616,8 @@ export const plantData = [
 		scientific_name: ["Elettaria cardamomum"],
 		description:
 			"Cardamom, often referred to as the 'queen of spices', is renowned for its aromatic properties and numerous health benefits. It is a staple in many traditional medicine systems, particularly for its role in promoting digestive and respiratory health. Cardamom is not only used for flavoring food but also as a remedy for indigestion, nausea, and even bad breath. Its versatility extends to being a powerful antioxidant and helping to manage blood pressure. The unique fragrance and flavor make cardamom a cherished spice in both culinary and wellness practices across the world.",
-		default_image: "https://example.com/images/cardamom.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/81dvogopKZL._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -647,7 +652,7 @@ export const plantData = [
 		scientific_name: ["Hibiscus rosa-sinesis"],
 		description:
 			"Hibiscus is a tropical flowering plant that offers a range of health benefits, especially for skin, hair, and heart health. The vibrant flowers are packed with antioxidants, vitamins, and minerals that support skin rejuvenation and boost the immune system. Hibiscus tea is well-known for its potential to reduce high blood pressure and improve circulation. The plant’s natural compounds also promote healthy digestion and can alleviate constipation. With its soothing properties, hibiscus has become a popular choice in both wellness and beauty routines, celebrated for its refreshing taste and therapeutic uses.",
-		default_image: "https://example.com/images/hibiscus.jpg",
+		default_image: "https://m.media-amazon.com/images/I/61vRpvb3DmL.jpg",
 		medicinal_uses: [
 			{
 				"Hair health":
@@ -682,7 +687,8 @@ export const plantData = [
 		scientific_name: ["Santalum album"],
 		description:
 			"Sandalwood is a fragrant tree known for its heartwood, which is used in a variety of products ranging from incense to essential oils. The aroma is soothing, making it popular in aromatherapy to relieve stress and enhance mental clarity. Sandalwood oil has been used in skincare for its antiseptic and anti-inflammatory properties, aiding in the treatment of acne, rashes, and skin irritation. Additionally, the tree’s fragrant oil is used to calm the mind, improve focus, and promote relaxation, making it a valuable asset in both wellness and beauty routines.",
-		default_image: "https://example.com/images/sandalwood.jpg",
+		default_image:
+			"https://greenparadiselive.com/cdn/shop/files/red_sandalwoodpan_3.png?v=1729404927&width=1920",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -717,7 +723,8 @@ export const plantData = [
 		scientific_name: ["Aegle marmelos"],
 		description:
 			"Bael, also known as the Wood Apple, is a sacred fruit in many cultures, particularly in India. The tree is known for its medicinal properties, particularly in digestive health and immunity. Bael fruit contains high levels of fiber, antioxidants, and vitamins that promote healthy digestion and relieve constipation. Its juice is also used to boost immunity and fight infections. Bael is also effective in managing blood sugar levels and supporting liver health. It is commonly consumed in various forms such as raw, juiced, or dried and is considered a vital part of traditional medicine.",
-		default_image: "https://example.com/images/bael.jpg",
+		default_image:
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXYO6EGD65CO6stserQtSesrkMV7BYledVew&s",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -752,7 +759,8 @@ export const plantData = [
 		scientific_name: ["Coriandrum sativum"],
 		description:
 			"Coriander, also known as cilantro, is a versatile herb widely used in culinary and medicinal applications. The leaves and seeds of coriander have distinct flavors and are known for their digestive, anti-inflammatory, and antimicrobial properties. This herb has been used in traditional medicine to promote digestion, alleviate skin issues, and even reduce blood sugar levels. Coriander also supports the immune system with its rich antioxidant content. Its fresh, citrusy flavor makes it a popular ingredient in various cuisines, from Indian to Mediterranean dishes. Coriander's ability to support digestive and skin health makes it a go-to herb for overall wellness.",
-		default_image: "https://example.com/images/coriander.jpg",
+		default_image:
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2aUs9Fg8kzWzLT8uP4ux3klVCHJlQ07Amtw&s",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -787,7 +795,8 @@ export const plantData = [
 		scientific_name: ["Foeniculum vulgare"],
 		description:
 			"Fennel is an aromatic herb with a unique, licorice-like flavor that is popular in both culinary and medicinal practices. It is highly regarded for its digestive and anti-inflammatory properties. Fennel has been used for centuries to aid digestion, relieve bloating, and reduce muscle spasms. Its seeds contain compounds that may promote weight loss and support heart health. In addition to its digestive benefits, fennel also supports respiratory health by helping to clear congestion. It is often used in teas, soups, and salads. As a versatile herb, fennel not only enhances the flavor of dishes but also offers significant health benefits.",
-		default_image: "https://example.com/images/fennel.jpg",
+		default_image:
+			"https://i1.wp.com/www.greengardenbuzz.com/wp-content/uploads/2020/08/nature-3564229_1920-scaled.jpg?resize=1170%2C780&ssl=1",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -822,7 +831,8 @@ export const plantData = [
 		scientific_name: ["Sesamum indicum"],
 		description:
 			"Sesame is a nutrient-rich plant known for its seeds, which are packed with healthy fats, protein, vitamins, and minerals. The seeds are commonly used in cooking, baking, and oil extraction. Sesame has a variety of health benefits, including promoting skin health, supporting hair growth, and improving heart health by lowering cholesterol levels. Rich in antioxidants, it also supports digestion and bone health. Sesame is a versatile crop that grows well in warm climates and provides significant nutritional benefits, making it an important plant for both culinary and medicinal purposes.",
-		default_image: "https://example.com/images/sesame.jpg",
+		default_image:
+			"https://www.thespruce.com/thmb/lCfda1Fb3dDkPvezJaYFPuYzaK4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SPR-growing-sesame-plants-5082982-01-5d464d45f27d44548efe4a1dabb4738d.jpg",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -857,7 +867,8 @@ export const plantData = [
 		scientific_name: ["Syzygium aromaticum"],
 		description:
 			"Clove is a spice with potent antimicrobial and pain-relieving properties, commonly used in dental and respiratory health. The flower buds of the clove tree contain a compound called eugenol, which is responsible for its distinctive flavor and medicinal qualities. Clove has been used traditionally to relieve toothaches, freshen breath, and alleviate symptoms of a cold or cough. It also serves as a natural remedy for digestive issues and inflammation. Known for its strong, aromatic fragrance, clove is a popular ingredient in cooking and essential oils. It can be consumed as a spice or used in topical applications for its therapeutic effects.",
-		default_image: "https://example.com/images/clove.jpg",
+		default_image:
+			"https://rukminim2.flixcart.com/image/850/1000/xif0q/shopsy-plant-sapling/f/y/o/perennial-yes-yes-clove-plant-77i-1-alogardening-original-imahy9hmmmdpzehn.jpeg?q=90&crop=false",
 		medicinal_uses: [
 			{
 				"Oral health":
@@ -892,7 +903,8 @@ export const plantData = [
 		scientific_name: ["Momordica charantia"],
 		description:
 			"Bitter gourd, also known as bitter melon, is a vegetable with notable medicinal benefits, particularly in managing diabetes and supporting liver health. This plant is renowned for its ability to lower blood sugar levels, making it an excellent choice for individuals with diabetes. In addition to its blood-sugar-regulating properties, bitter gourd also supports liver detoxification, improves digestion, and helps boost immunity. Its bitter taste is due to compounds like momordicin and charantin, which are responsible for its medicinal effects. It can be consumed raw, cooked, or as a supplement for maximum benefit.",
-		default_image: "https://example.com/images/bitter_gourd.jpg",
+		default_image:
+			"https://gardeningsg.nparks.gov.sg/images/Plants/Bittergourd%20(1).jpg",
 		medicinal_uses: [
 			{
 				"Diabetes management":
@@ -927,7 +939,8 @@ export const plantData = [
 		scientific_name: ["Mentha"],
 		description:
 			"Mint is a fragrant herb with a cooling sensation, commonly used in culinary dishes, teas, and as a natural remedy. It is known for its digestive and soothing properties. Mint has been traditionally used to relieve nausea, indigestion, and headaches. Its leaves contain menthol, which gives the herb its distinctive cooling effect. Mint is also an effective remedy for relieving muscle pain, improving breath freshening, and reducing stress. It is commonly used in teas, salads, and desserts for its refreshing taste and aroma.",
-		default_image: "https://example.com/images/mint.jpg",
+		default_image:
+			"https://www.padmamnursery.com/cdn/shop/files/peppermint-1-_1.jpg?v=1728318005",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -962,7 +975,8 @@ export const plantData = [
 		scientific_name: ["Lavandula angustifolia"],
 		description:
 			"Lavender is a fragrant herb renowned for its calming, soothing effects, both in culinary and medicinal applications. It is often used in aromatherapy for its ability to reduce stress, anxiety, and promote sleep. Lavender also has antimicrobial properties, making it effective for treating minor burns, insect bites, and skin irritation. The flowers and oil of lavender have been traditionally used to promote relaxation, reduce inflammation, and improve mood. Lavender’s pleasant fragrance makes it a popular addition to home gardens, and it’s commonly used in essential oils, teas, and perfumes.",
-		default_image: "https://example.com/images/lavender.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/51fV69Nw6IL._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Stress relief":
@@ -997,7 +1011,8 @@ export const plantData = [
 		scientific_name: ["Rosmarinus officinalis"],
 		description:
 			"Rosemary is an aromatic evergreen herb with needle-like leaves, widely used for its culinary flavor and medicinal benefits. It is known for its ability to improve memory, reduce inflammation, and boost the immune system. Rosemary is rich in antioxidants, which help fight oxidative stress and support overall health. In addition to its cognitive benefits, rosemary is also used for digestion, skin health, and improving circulation. The herb’s strong, pine-like fragrance makes it a popular addition to culinary dishes, especially in Mediterranean cuisine.",
-		default_image: "https://example.com/images/rosemary.jpg",
+		default_image:
+			"https://images.meesho.com/images/products/447803165/ang4w_512.webp",
 		medicinal_uses: [
 			{
 				"Cognitive health":
@@ -1032,7 +1047,8 @@ export const plantData = [
 		scientific_name: ["Curcuma longa"],
 		description:
 			"Turmeric is a golden-yellow spice derived from the root of the Curcuma longa plant. It is best known for its active compound, curcumin, which has powerful anti-inflammatory, antioxidant, and therapeutic properties. Turmeric has been used for centuries in Ayurvedic and traditional medicine to treat a wide range of ailments, including arthritis, digestive issues, and skin conditions. It is commonly used in cooking, especially in Indian cuisine, for its distinct flavor and vibrant color. Beyond its culinary uses, turmeric is gaining popularity as a natural remedy for promoting overall health and wellness.",
-		default_image: "https://example.com/images/turmeric.jpg",
+		default_image:
+			"https://lalitenterprise.com/cdn/shop/files/Untitleddesign-2024-06-13T171752.892.webp?v=1718280778",
 		medicinal_uses: [
 			{
 				"Anti-inflammatory":
@@ -1067,7 +1083,8 @@ export const plantData = [
 		scientific_name: ["Ocimum basilicum"],
 		description:
 			"Basil is a fragrant herb often used in cooking, especially in Mediterranean, Italian, and Southeast Asian cuisines. It has a sweet, slightly peppery flavor and is used in a variety of dishes, from salads to sauces. Basil also offers medicinal benefits, including its ability to improve digestion, alleviate stress, and support immune health. The essential oil of basil contains compounds that act as antioxidants, antimicrobial agents, and anti-inflammatory agents. It has been used in traditional medicine for its calming effects and to treat conditions such as headaches, indigestion, and skin irritations.",
-		default_image: "https://example.com/images/basil.jpg",
+		default_image:
+			"https://joegardener.com/wp-content/uploads/2021/07/AMP_9588-708X466.jpg",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -1102,7 +1119,8 @@ export const plantData = [
 		scientific_name: ["Crocus sativus"],
 		description:
 			"Saffron is a prized spice derived from the dried stigma of the Crocus sativus flower. Known for its vibrant color, unique flavor, and aromatic fragrance, saffron has been used for centuries in cooking, medicine, and cosmetics. It is often referred to as the 'red gold' due to its rarity and high cost. Beyond its culinary applications, saffron offers numerous health benefits, including boosting mood, promoting eye health, and reducing inflammation. Its antioxidant properties also support overall well-being, making it a valuable addition to both traditional and modern medicine.",
-		default_image: "https://example.com/images/saffron.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/617aUHLmLGL._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Mood enhancer":
@@ -1137,7 +1155,8 @@ export const plantData = [
 		scientific_name: ["Carica papaya"],
 		description:
 			"Papaya is a tropical fruit known for its vibrant orange color and sweet, juicy flavor. It is rich in vitamins and enzymes, particularly papain, which aids in digestion and promotes gut health. Papaya is often consumed fresh, in smoothies, or as part of salads, but its medicinal properties extend beyond its culinary uses. It has anti-inflammatory effects and supports immune health through its high vitamin C content. Additionally, papaya is widely used in traditional medicine to promote skin healing, reduce scars, and treat digestive disorders, making it a versatile and beneficial fruit.",
-		default_image: "https://example.com/images/papaya.jpg",
+		default_image:
+			"https://organicbazar.net/cdn/shop/products/Untitled-design-2022-12-08T182126.753.jpg?v=1694167597",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -1172,7 +1191,8 @@ export const plantData = [
 		scientific_name: ["Mangifera indica"],
 		description:
 			"Mango leaves, though often overlooked compared to the fruit, have significant medicinal properties. They are packed with vitamins, antioxidants, and anti-inflammatory compounds, making them valuable in traditional medicine. Mango leaves are particularly known for their effectiveness in managing blood sugar levels, which is why they are frequently used in the treatment of diabetes. Additionally, they support respiratory health, treat skin conditions like acne, and offer general anti-inflammatory benefits. With a rich history of use in Ayurveda, mango leaves are widely recognized for their ability to improve health and treat common ailments.",
-		default_image: "https://example.com/images/mango-leaves.jpg",
+		default_image:
+			"https://gachwala.in/wp-content/uploads/2022/06/image_2024_03_14T05_19_46_168Z.jpg",
 		medicinal_uses: [
 			{
 				"Diabetes management":
@@ -1207,7 +1227,7 @@ export const plantData = [
 		scientific_name: ["Psidium guajava"],
 		description:
 			"Guava leaves, often overlooked in favor of the fruit, offer a variety of medicinal benefits. They contain high levels of antioxidants, vitamins, and other bioactive compounds that support overall health. Guava leaves are particularly effective in treating digestive issues, such as diarrhea and stomach discomfort, due to their antimicrobial and anti-inflammatory properties. Additionally, they are beneficial for managing blood sugar levels, reducing inflammation, and promoting healthy skin. Guava leaves are commonly used in traditional medicine to make teas, poultices, and extracts for these purposes.",
-		default_image: "https://example.com/images/guava-leaves.jpg",
+		default_image: "https://static.toiimg.com/photo/96149903.cms",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -1242,7 +1262,8 @@ export const plantData = [
 		scientific_name: ["Moringa oleifera"],
 		description:
 			"Moringa, also known as the 'miracle tree,' is an exceptionally nutritious plant native to parts of Asia and Africa. Its leaves, seeds, and pods are packed with vitamins, minerals, and essential amino acids, making it an important part of the diet in many parts of the world. Moringa is often referred to as a superfood due to its nutrient density. It has been used for centuries in traditional medicine to treat a wide range of ailments, from inflammatory conditions to digestive issues. It is also widely known for its ability to support heart health and regulate blood sugar levels.",
-		default_image: "https://example.com/images/moringa.jpg",
+		default_image:
+			"https://nurserylive.com/cdn/shop/products/nurserylive-plants-drumsticks-moringa-oleifera-plant-16968832549004_512x512.jpg?v=1634218281",
 		medicinal_uses: [
 			{
 				"Nutrient boost":
@@ -1277,7 +1298,8 @@ export const plantData = [
 		scientific_name: ["Piper betle"],
 		description:
 			"Betel leaves are a popular medicinal plant commonly used in many parts of Asia for their antimicrobial, anti-inflammatory, and digestive properties. The leaves contain several bioactive compounds that make them effective in promoting oral hygiene, preventing infections, and improving digestion. Additionally, betel leaves are often chewed along with other ingredients to boost energy and concentration. They have long been used in traditional medicine for their wide range of health benefits, including enhancing blood circulation, reducing inflammation, and promoting wound healing.",
-		default_image: "https://example.com/images/betel-leaf.jpg",
+		default_image:
+			"https://cdn.britannica.com/02/218302-050-B19E71BA/betel-pepper-or-pan-plant-piper-betle-leaves.jpg",
 		medicinal_uses: [
 			{
 				"Oral health":
@@ -1312,7 +1334,8 @@ export const plantData = [
 		scientific_name: ["Sesbania grandiflora"],
 		description:
 			"Sesbania is a fast-growing, drought-tolerant tree that is often found in tropical and subtropical regions. The plant is not only known for its rapid growth but also for its numerous medicinal and nutritional benefits. The leaves, flowers, and seeds of the sesbania plant have been used in traditional medicine to treat various ailments, including respiratory issues, skin conditions, and digestive problems. Rich in vitamins and minerals, sesbania is also known for its ability to act as a natural diuretic, helping to improve kidney function and promote healthy urine production.",
-		default_image: "https://example.com/images/sesbania.jpg",
+		default_image:
+			"https://nurserylive.com/cdn/shop/products/nurserylive-plants-sesbania-grandiflora-hummingbird-tree-plant-16969308930188.jpg?v=1634228268",
 		medicinal_uses: [
 			{
 				"Respiratory health":
@@ -1347,7 +1370,8 @@ export const plantData = [
 		scientific_name: ["Lawsonia inermis"],
 		description:
 			"Henna, also known as Mehndi, is a plant known for its ornamental and medicinal uses, particularly in treating skin conditions. The leaves of the henna plant are used to create a paste that is applied to the skin for decorative purposes, as well as for healing burns, rashes, and other skin conditions. Henna has been used for centuries for its cooling, anti-inflammatory, and antimicrobial properties. In addition to its skin benefits, henna is also used for promoting healthy hair growth and preventing scalp conditions like dandruff.",
-		default_image: "https://example.com/images/henna.jpg",
+		default_image:
+			"https://vgrgardens.com/wp-content/uploads/2023/04/henna-maruthani-muligai-buyonline-vgr-gardens-2-scaled-e1681951591468.jpg",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -1382,7 +1406,8 @@ export const plantData = [
 		scientific_name: ["Boswellia serrata"],
 		description:
 			"Indian Frankincense, known for its resin, is primarily used for its medicinal properties, particularly for joint health and inflammation. The resin contains boswellic acids that have been shown to have anti-inflammatory and analgesic effects, making it a popular treatment for conditions like arthritis, asthma, and skin problems. Indian Frankincense is also used in traditional medicine for respiratory health, digestive support, and skin healing. It has been valued for centuries for its healing properties and is commonly used in aromatherapy for its calming effects.",
-		default_image: "https://example.com/images/indian-frankincense.jpg",
+		default_image:
+			"https://cdn.britannica.com/04/166304-050-EC7231F2/frankincense-tree-Indian-Frankincense-region-Dhofar-Oman.jpg",
 		medicinal_uses: [
 			{
 				"Joint health":
@@ -1417,7 +1442,7 @@ export const plantData = [
 		scientific_name: ["Justicia adhatoda"],
 		description:
 			"Vasaka, also known as Adulsa, is a well-known medicinal plant often used to treat respiratory ailments. The leaves of this plant contain active compounds that act as expectorants, helping to clear mucus from the respiratory tract. Vasaka is particularly useful for treating coughs, asthma, bronchitis, and other chronic respiratory conditions. It has anti-inflammatory, antimicrobial, and antioxidant properties, making it a comprehensive remedy for respiratory and general health. It is also used in traditional medicine to relieve fever and promote overall wellness.",
-		default_image: "https://example.com/images/vasaka.jpg",
+		default_image: "https://m.media-amazon.com/images/I/61a4QiDPSTL.jpg",
 		medicinal_uses: [
 			{
 				"Respiratory health":
@@ -1452,7 +1477,8 @@ export const plantData = [
 		scientific_name: ["Valeriana wallichii"],
 		description:
 			"Indian Valerian, a member of the Valerianaceae family, is renowned for its soothing properties. The root of this plant has been used for centuries in traditional medicine to alleviate stress, promote relaxation, and improve sleep quality. It contains active compounds like valerenic acid, which are believed to have sedative effects. Commonly consumed as a tea or in supplement form, it is popular for its mild, non-habit-forming properties, making it a preferable option for those struggling with insomnia or anxiety. It also offers mild muscle-relaxant effects and is used in holistic treatments for promoting general well-being.",
-		default_image: "https://example.com/images/indian-valerian.jpg",
+		default_image:
+			"https://www.planetayurveda.com/wp-content/uploads/2022/09/tagar-indian-valerian-valeriana-wallichii.jpg",
 		medicinal_uses: [
 			{
 				"Sleep aid":
@@ -1487,7 +1513,8 @@ export const plantData = [
 		scientific_name: ["Nigella sativa"],
 		description:
 			"Kalonji, also known as Black Cumin, is a highly versatile herb native to Asia. The small, black seeds are packed with nutrients and bioactive compounds such as thymoquinone, which provide powerful medicinal properties. It has been used for centuries in both culinary and medicinal applications, particularly for its digestive and respiratory benefits. Kalonji is well-regarded for its ability to strengthen the immune system, reduce inflammation, and promote clear skin. The seeds are commonly ground and used as a spice or taken in oil form to support health in various ways, from boosting immunity to improving respiratory conditions.",
-		default_image: "https://example.com/images/kalonji.jpg",
+		default_image:
+			"https://upload.wikimedia.org/wikipedia/commons/5/53/Nsativa001Wien.jpg",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -1522,7 +1549,8 @@ export const plantData = [
 		scientific_name: ["Nardostachys jatamansi"],
 		description:
 			"Indian Spikenard, a perennial herb found in the Himalayas, is prized for its calming and soothing effects. Known for its aromatic rhizomes, the plant has been used for centuries in Ayurvedic medicine to treat anxiety, stress, and other nervous disorders. It has a rich history as a sedative and a remedy for digestive issues. The root extract is commonly used in essential oils and herbal preparations. Additionally, Spikenard is highly valued for its antioxidant properties, helping to protect cells from oxidative stress, while also offering anti-inflammatory benefits to ease pain and discomfort.",
-		default_image: "https://example.com/images/indian-spikenard.jpg",
+		default_image:
+			"https://tisserandinstitute.org/wp-content/uploads/2017/09/2292912887_e83c1fe77e_o.jpg",
 		medicinal_uses: [
 			{
 				"Anxiety relief":
@@ -1557,7 +1585,7 @@ export const plantData = [
 		scientific_name: ["Dalbergia sissoo"],
 		description:
 			"Indian Rosewood, also known as Shisham, is a deciduous tree native to the Indian subcontinent. The wood is highly valued in the furniture industry for its durability and rich color, but the plant is also prized for its medicinal properties. The bark, leaves, and wood are used in Ayurvedic medicine for their therapeutic benefits. It is particularly known for its anti-inflammatory and pain-relieving effects, often used in treating joint pain and inflammation. In addition, it supports digestive health and promotes skin healing, making it a valuable plant in traditional medicine.",
-		default_image: "https://example.com/images/indian-rosewood.jpg",
+		default_image: "https://m.media-amazon.com/images/I/81ZWzvM7JWL.jpg",
 		medicinal_uses: [
 			{
 				"Pain relief":
@@ -1592,7 +1620,8 @@ export const plantData = [
 		scientific_name: ["Ricinus communis"],
 		description:
 			"Castor is a fast-growing herb that produces highly sought-after castor oil, which has a wide range of medicinal and therapeutic uses. The plant, native to tropical regions, is known for its broad, glossy leaves and spiky fruits that contain castor seeds. Castor oil is prized for its anti-inflammatory, antibacterial, and skin-healing properties, and the plant has been used traditionally to treat various ailments. From hair growth and skin care to digestive health, Castor is a versatile herb with applications in both traditional medicine and modern wellness practices.",
-		default_image: "https://example.com/images/castor.jpg",
+		default_image:
+			"https://rukminim2.flixcart.com/image/850/1000/xif0q/plant-sapling/x/z/z/yes-annual-yes-castor-bean-plant-1-plastic-bag-abefariya-original-imagn4hjjnjmxnzq.jpeg?q=20&crop=false",
 		medicinal_uses: [
 			{
 				"Skin care":
@@ -1627,7 +1656,8 @@ export const plantData = [
 		scientific_name: ["Centella asiatica"],
 		description:
 			"Indian Pennywort, also known as Centella Asiatica, is renowned for its cognitive and skin-enhancing benefits. This herb is used in traditional medicine for its ability to improve mental clarity, support wound healing, and promote healthy circulation. It is a valuable remedy for individuals dealing with anxiety and stress, as well as those looking to improve their overall skin health. Known for its adaptogenic properties, it also aids in reducing inflammation, making it an essential herb for holistic well-being.",
-		default_image: "https://example.com/images/indian-pennywort.jpg",
+		default_image:
+			"https://upload.wikimedia.org/wikipedia/commons/5/59/Asiatic_Pennywort.jpg",
 		medicinal_uses: [
 			{
 				"Mental clarity":
@@ -1662,7 +1692,8 @@ export const plantData = [
 		scientific_name: ["Myristica fragrans"],
 		description:
 			"Nutmeg is a spice derived from the seeds of the Myristica fragrans tree, known for its aromatic and medicinal properties. It is widely used in cooking and traditional medicine due to its potent digestive and anti-inflammatory benefits. Nutmeg has been used to alleviate pain, reduce inflammation, and improve cognitive function. Additionally, it serves as a natural sleep aid and is widely recognized for its ability to support a restful night's sleep. Nutmeg's versatility in both culinary and medicinal applications makes it a highly valuable herb in holistic health practices.",
-		default_image: "https://example.com/images/nutmeg.jpg",
+		default_image:
+			"https://hugaplant.com/cdn/shop/products/MAIN_86c4a357-feae-461c-8941-d13dbf8722a1.png?v=1674044313",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -1697,7 +1728,8 @@ export const plantData = [
 		scientific_name: ["Morinda citrifolia"],
 		description:
 			"Indian Mulberry, commonly known as Noni, is a tropical fruit that has been used for centuries for its potent medicinal properties. Noni is particularly valued for its ability to boost the immune system, promote pain relief, and improve digestive health. The fruit and its extracts are also used to treat skin ailments and promote wound healing. Additionally, Noni has anti-inflammatory properties that make it effective for managing chronic pain and inflammation. This plant is widely consumed in various forms for its wide-ranging health benefits and holistic healing properties.",
-		default_image: "https://example.com/images/noni.jpg",
+		default_image:
+			"https://www.hindustantimes.com/ht-img/img/2023/03/09/1600x900/The-mulberry-required-only-careful-attention--the-_1678358351467.jpg",
 		medicinal_uses: [
 			{
 				"Immunity boost":
@@ -1732,7 +1764,8 @@ export const plantData = [
 		scientific_name: ["Momordica charantia"],
 		description:
 			"Karela, or Bitter Melon, is a powerful herb known for its medicinal benefits, especially in managing diabetes and promoting liver health. Its active compounds help to lower blood sugar levels and regulate insulin. Bitter Melon also supports liver detoxification and promotes healthy liver function, making it a staple in natural remedies for detox. Additionally, Karela aids in digestion, strengthens the immune system, and has anti-inflammatory properties, making it a great herb for overall wellness. This versatile plant is commonly consumed in juices, teas, and culinary dishes.",
-		default_image: "https://example.com/images/karela.jpg",
+		default_image:
+			"https://rukminim2.flixcart.com/image/850/1000/kwtkxow0/plant-seed/7/i/w/25-kd-696-paudha-original-imag9fa7dwgfbkhz.jpeg?q=90&crop=false",
 		medicinal_uses: [
 			{
 				"Diabetes management":
@@ -1767,7 +1800,8 @@ export const plantData = [
 		scientific_name: ["Helichrysum italicum"],
 		description:
 			"The Curry Plant, also known as Helichrysum italicum, is valued for its aromatic leaves and medicinal properties. Widely used for its skin health benefits, it promotes wound healing, reduces scars, and provides relief from various skin conditions. The plant also supports respiratory health by alleviating symptoms of asthma and bronchitis. With its antimicrobial properties, the Curry Plant is beneficial in treating infections and improving overall immune function. Additionally, it helps in digestion and reducing bloating, making it a versatile herb in both medicinal and culinary practices.",
-		default_image: "https://example.com/images/curry-plant.jpg",
+		default_image:
+			"https://pinchofseeds.com/wp-content/uploads/2020/12/Curry-Leaf-Plant-Care.jpg",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -1802,7 +1836,8 @@ export const plantData = [
 		scientific_name: ["Rauwolfia serpentina"],
 		description:
 			"Sarpagandha, a vital herb in Ayurvedic medicine, is renowned for its ability to lower blood pressure and its calming effects. It has been used for centuries to treat conditions like hypertension, anxiety, and insomnia. The plant's roots contain reserpine, an alkaloid known for its sedative and anti-hypertensive properties. Besides improving sleep and reducing anxiety, it is also beneficial for digestive issues and promotes relaxation. Sarpagandha is often recommended as a natural remedy for maintaining mental and emotional health.",
-		default_image: "https://example.com/images/sarpagandha.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/61IwYEvT1SL._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Blood pressure":
@@ -1837,7 +1872,8 @@ export const plantData = [
 		scientific_name: ["Chlorophytum borivilianum"],
 		description:
 			"Safed Musli is a well-known herb used in traditional medicine to improve vitality and stamina. It is particularly valued as an adaptogen, helping the body cope with stress. This herb also has a significant role in enhancing reproductive health and boosting energy levels. Often referred to as a natural tonic, Safed Musli has been used to treat fatigue, improve sexual wellness, and enhance overall physical strength. It is widely known for its potential to revitalize the body, reduce inflammation, and improve immune function, making it an essential herb in natural wellness practices.",
-		default_image: "https://example.com/images/safed-musli.jpg",
+		default_image:
+			"https://organicbazar.net/cdn/shop/products/Safed-Musli.jpg?v=1692879658",
 		medicinal_uses: [
 			{
 				"Energy booster":
@@ -1872,7 +1908,8 @@ export const plantData = [
 		scientific_name: ["Psoralea corylifolia"],
 		description:
 			"Bakuchi, also known as Psoralea, is an herb used extensively in traditional medicine for treating skin conditions such as psoriasis, vitiligo, and eczema. The plant contains natural compounds that help in reducing skin pigmentation issues and promoting the healing of damaged skin. In addition to its skin benefits, Bakuchi also supports bone health, enhances digestion, and has antimicrobial properties. It is commonly used in topical treatments for skin conditions and as an internal remedy to reduce inflammation, improve gut health, and prevent infections.",
-		default_image: "https://example.com/images/bakuchi.jpg",
+		default_image:
+			"https://img.forestessentialsindia.com/blog/wp-content/uploads/2024/03/391.jpg",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -1907,7 +1944,8 @@ export const plantData = [
 		scientific_name: ["Centella asiatica"],
 		description:
 			"Gotu Kola, a revered herb in traditional medicine, is widely recognized for its ability to enhance cognitive function and promote skin health. It is often used to treat mental fatigue, improve memory, and enhance mental clarity. Additionally, Gotu Kola is beneficial for skin rejuvenation, wound healing, and scar reduction. The herb has significant anti-inflammatory properties, making it a natural remedy for a range of inflammatory conditions. By promoting better blood circulation, it also aids in preventing varicose veins and improving overall circulation.",
-		default_image: "https://example.com/images/gotu-kola.jpg",
+		default_image:
+			"https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/CentellaAsiatica_hero-1024x575.jpg?w=1155&h=1528",
 		medicinal_uses: [
 			{
 				"Cognitive health":
@@ -1942,7 +1980,7 @@ export const plantData = [
 		scientific_name: ["Andrographis paniculata"],
 		description:
 			"Kalmegh, known for its potent anti-inflammatory and immunity-boosting properties, is commonly used to treat a range of ailments, including liver diseases, colds, and respiratory infections. The plant is rich in andrographolide, a compound with remarkable medicinal benefits, particularly for detoxifying the liver and strengthening the immune system. Kalmegh is also known to relieve digestive discomfort, reduce inflammation, and support respiratory health. It has been traditionally used to treat fever, colds, and infections, making it a popular herb in herbal medicine.",
-		default_image: "https://example.com/images/kalmegh.jpg",
+		default_image: "https://m.media-amazon.com/images/I/61SVTsnYLjL.jpg",
 		medicinal_uses: [
 			{
 				"Liver health":
@@ -1977,7 +2015,8 @@ export const plantData = [
 		scientific_name: ["Hemidesmus indicus"],
 		description:
 			"Indian Sarsaparilla is a well-known herb in traditional medicine, valued for its detoxifying properties. It helps purify the blood, promotes clear skin, and supports respiratory health. This herb is often used to treat various skin conditions like eczema, psoriasis, and acne. Additionally, it has anti-inflammatory and antimicrobial properties, making it beneficial in treating infections and reducing inflammation. Its roots are commonly used in herbal formulations, often consumed as a tonic for general health, to strengthen the immune system, and for improving overall vitality.",
-		default_image: "https://example.com/images/indian-sarsaparilla.jpg",
+		default_image:
+			"https://www.jiomart.com/images/product/original/rv2tygsnj7/plantzoin-indian-sarsaparilla-dudhli-hemidesmus-indicus-anantamul-live-plant-product-images-orv2tygsnj7-p599587672-0-202303190258.jpg?im=Resize=(1000,1000)",
 		medicinal_uses: [
 			{
 				Detoxification:
@@ -2012,7 +2051,8 @@ export const plantData = [
 		scientific_name: ["Nyctanthes arbor-tristis"],
 		description:
 			"Harsingar, also known as Night Jasmine, is a fragrant flowering plant used widely in traditional medicine. It has been valued for its ability to treat a variety of ailments, including fevers, arthritis, and respiratory issues. Its flowers and leaves are used in preparations for reducing fever and pain, promoting skin health, and supporting digestive function. Harsingar also has anti-inflammatory and antimicrobial properties, making it effective in treating skin conditions and wounds. Its calming aroma is also known to relieve stress and anxiety, contributing to overall wellness.",
-		default_image: "https://example.com/images/harsingar.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/61lpn4OQOnL._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Fever reduction":
@@ -2047,7 +2087,8 @@ export const plantData = [
 		scientific_name: ["Bryophyllum pinnatum"],
 		description:
 			"Patharchatta, commonly known as Stonebreaker, is widely recognized for its effectiveness in treating kidney stones and urinary tract disorders. Its leaves are used in traditional medicine to help dissolve kidney stones and alleviate related pain. Additionally, Patharchatta has potent anti-inflammatory properties and can be used to treat conditions such as arthritis, wounds, and infections. Its soothing effect also extends to digestive health, helping with indigestion and constipation. The plant's healing properties make it a popular remedy in Ayurveda for treating a variety of ailments.",
-		default_image: "https://example.com/images/patharchatta.jpg",
+		default_image:
+			"https://hugaplant.com/cdn/shop/files/MAIN_87e3304a-ca45-41c5-9c71-a657746ed689.png?v=1692766270",
 		medicinal_uses: [
 			{
 				"Kidney stones":
@@ -2082,7 +2123,8 @@ export const plantData = [
 		scientific_name: ["Commiphora wightii"],
 		description:
 			"Guggul is an important herb in Ayurvedic medicine, known for its ability to lower cholesterol levels and treat conditions such as arthritis. It is especially beneficial for improving circulation and promoting heart health. Additionally, Guggul has anti-inflammatory and analgesic properties, making it useful for treating joint pain, swelling, and other inflammatory conditions. Its detoxifying effects also help purify the blood and enhance overall health. Guggul is widely used as a supplement for weight management and to boost the body's metabolism.",
-		default_image: "https://example.com/images/guggul.jpg",
+		default_image:
+			"https://greenparadiselive.com/cdn/shop/products/guggul_plant-greenparadise_1200x1200.jpg?v=1729575307",
 		medicinal_uses: [
 			{
 				"Cholesterol control":
@@ -2117,7 +2159,8 @@ export const plantData = [
 		scientific_name: ["Syzygium cumini"],
 		description:
 			"Jamun, also known as Indian Blackberry, is a powerful medicinal plant renowned for its ability to regulate blood sugar levels, making it particularly beneficial for individuals with diabetes. The fruit of this tree is rich in antioxidants, which help fight oxidative stress, promote skin health, and boost the immune system. It is widely used in traditional medicine for digestive health, oral care, and treating skin issues. Jamun’s seeds, leaves, and fruit have been found to possess anti-inflammatory, antimicrobial, and antioxidant properties, supporting overall well-being.",
-		default_image: "https://example.com/images/jamun.jpg",
+		default_image:
+			"https://nurserylive.com/cdn/shop/products/nurserylive-jamun-plant.jpg?v=1634222564",
 		medicinal_uses: [
 			{
 				"Diabetes management":
@@ -2152,7 +2195,8 @@ export const plantData = [
 		scientific_name: ["Cassia fistula"],
 		description:
 			"Amaltas, commonly known as the Golden Shower Tree, is a stunning plant prized for its bright yellow flowers and medicinal uses. It is particularly noted for its powerful detoxifying and laxative effects, making it highly beneficial for digestive health. Amaltas also supports skin health, helping to treat conditions like eczema and psoriasis. Its properties make it an effective remedy for respiratory conditions like asthma and bronchitis, and it has mild antipyretic properties that help reduce fever. Traditional medicine utilizes all parts of the tree, including the bark, leaves, and flowers.",
-		default_image: "https://example.com/images/amaltas.jpg",
+		default_image:
+			"https://www.dabur.com/Medical%20Plants/Amaltas%20Plant_0.jpg",
 		medicinal_uses: [
 			{
 				Laxative:
@@ -2187,7 +2231,8 @@ export const plantData = [
 		scientific_name: ["Boerhavia diffusa"],
 		description:
 			"Punarnava, known for its rejuvenating properties, is a herb widely used in Ayurvedic medicine for improving kidney function, managing edema, and supporting digestive health. This herb is known to cleanse the kidneys and support their optimal functioning. It also reduces swelling, improves digestion, and can aid in reducing bloating. Punarnava’s anti-inflammatory and diuretic properties are also beneficial for respiratory health and overall body detoxification. This versatile herb is commonly used in treating a variety of ailments including liver issues, digestive disorders, and urinary tract infections.",
-		default_image: "https://example.com/images/punarnava.jpg",
+		default_image:
+			"https://www.herbalplantslive.com/wp-content/uploads/2020/10/coverimage-600x450-1553255406.jpg",
 		medicinal_uses: [
 			{
 				"Kidney health":
@@ -2222,7 +2267,8 @@ export const plantData = [
 		scientific_name: ["Terminalia chebula"],
 		description:
 			"Haritaki, a prominent herb in Ayurveda, is known for its potent detoxifying and digestive properties. It is commonly included in the Triphala formula, which is used to cleanse the digestive tract and improve overall health. Haritaki helps in improving digestion, alleviating constipation, and purifying the blood. It is also known for its immunity-boosting effects and its ability to support respiratory health. In addition, Haritaki's anti-inflammatory properties make it effective for reducing inflammation in the body and promoting skin health. Regular use of Haritaki can help maintain a healthy digestive system.",
-		default_image: "https://example.com/images/haritaki.jpg",
+		default_image:
+			"https://images.meesho.com/images/products/204327086/ifleq_512.webp",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -2257,7 +2303,8 @@ export const plantData = [
 		scientific_name: ["Terminalia bellirica"],
 		description:
 			"Bibhitaki, another key ingredient in the Triphala formulation, is highly valued for its detoxifying and anti-inflammatory properties. It helps purify the blood and supports the liver in detoxification. Bibhitaki is also beneficial for respiratory health, particularly in treating cough, cold, and asthma. Its medicinal properties extend to improving digestion and relieving constipation. Additionally, Bibhitaki is known to promote skin health by helping treat skin infections and speeding up wound healing. The herb’s overall benefits include strengthening the immune system and improving vitality.",
-		default_image: "https://example.com/images/bibhitaki.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/51HlxnwmF5L._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Respiratory health":
@@ -2292,7 +2339,8 @@ export const plantData = [
 		scientific_name: ["Cocos nucifera"],
 		description:
 			"Coconut is a versatile tropical tree offering a wide range of medicinal and nutritional benefits. Its water is known for hydrating the body, while coconut oil has been used for centuries to nourish and heal the skin. Beyond skin care, coconut has digestive benefits and helps strengthen the immune system. The tree's ability to thrive in tropical climates and its multi-purpose use for hydration, skin health, and hair growth makes it a valuable resource in both traditional and modern medicine.",
-		default_image: "https://example.com/images/coconut.jpg",
+		default_image:
+			"https://lalitenterprise.com/cdn/shop/files/Untitleddesign-2023-08-02T153713.744.webp?v=1690970950",
 		medicinal_uses: [
 			{
 				Hydration:
@@ -2327,7 +2375,8 @@ export const plantData = [
 		scientific_name: ["Onosma echioides"],
 		description:
 			"Ratanjot is an aromatic herb prized for its anti-inflammatory and skin-healing properties. It has been traditionally used to treat wounds and reduce scars, making it a valuable plant for both medicinal and cosmetic purposes. Ratanjot is also effective in combating inflammation, improving scalp health, and purifying the blood. Its healing qualities make it a popular choice in Ayurvedic medicine for treating a variety of ailments, including fever and dandruff.",
-		default_image: "https://example.com/images/ratanjot.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/61jrH0yYOkL._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -2362,7 +2411,8 @@ export const plantData = [
 		scientific_name: ["Berberis aristata"],
 		description:
 			"Indian Barberry, also known as 'Daruharidra,' is valued for its anti-inflammatory and antibacterial properties, commonly used in Ayurvedic medicine. This herb supports liver function and detoxification, improves skin health by treating acne and infections, and aids in digestion. It is also used to alleviate symptoms of eye infections and enhance vision. Its rich alkaloid content makes it a potent remedy for a variety of health issues, making it a crucial herb in natural healing practices.",
-		default_image: "https://example.com/images/indian_barberry.jpg",
+		default_image:
+			"https://upload.wikimedia.org/wikipedia/commons/b/b4/BerberisAculeata.jpg",
 		medicinal_uses: [
 			{
 				"Liver health":
@@ -2397,7 +2447,8 @@ export const plantData = [
 		scientific_name: ["Gentiana kurroo"],
 		description:
 			"Indian Gentian is a bitter herb known for its digestive and liver health benefits. It helps enhance digestion, alleviate bloating, and stimulate appetite, making it a useful herb for those with poor digestion or low appetite. This herb is also effective in reducing inflammation and fever, making it a valuable treatment for various infections. Its bitter compounds play an important role in promoting overall wellness by supporting the body's detoxification processes and aiding in digestive health.",
-		default_image: "https://example.com/images/indian_gentian.jpg",
+		default_image:
+			"https://www.flowersofindia.net/catalog/slides/Himalayan%20Gentian.jpg",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -2432,7 +2483,8 @@ export const plantData = [
 		scientific_name: ["Abelmoschus moschatus"],
 		description:
 			"Musk Mallow is an aromatic plant valued for its uses in respiratory, digestive, and skin health. The plant is used to relieve cough, asthma symptoms, and other respiratory ailments. Musk Mallow also aids in digestion and reduces stomach discomfort. Additionally, it has applications in skin care, where it is used to treat skin irritations and infections. The plant's calming properties make it effective in reducing stress and promoting relaxation, making it a well-rounded herb for overall health and well-being.",
-		default_image: "https://example.com/images/musk_mallow.jpg",
+		default_image:
+			"https://notahorticulturist.com/wp-content/uploads/2020/09/img_7528-1.jpg?w=675",
 		medicinal_uses: [
 			{
 				"Respiratory health":
@@ -2467,7 +2519,8 @@ export const plantData = [
 		scientific_name: ["Convolvulus pluricaulis"],
 		description:
 			"Shankhpushpi is a revered Ayurvedic herb known for its powerful brain-boosting properties. It is traditionally used to enhance memory, improve cognitive function, and reduce mental fatigue. Apart from its cognitive benefits, it is also widely used to relieve stress and anxiety, supporting a calm and clear mind. The herb is celebrated for its ability to promote restful sleep, aiding in deep and rejuvenating rest. Shankhpushpi is an excellent tonic for overall mental and physical health, often used in traditional practices to improve mood, concentration, and even as an adjunct for digestive health.",
-		default_image: "https://example.com/images/shankhpushpi.jpg",
+		default_image:
+			"https://mybageecha.com/cdn/shop/files/ClitoriaTernatea-Aparajita.jpg?v=1684834920",
 		medicinal_uses: [
 			{
 				"Brain health":
@@ -2502,7 +2555,8 @@ export const plantData = [
 		scientific_name: ["Aloe indica"],
 		description:
 			"Indian Aloe is a versatile and widely revered medicinal plant known for its remarkable healing properties. Traditionally used in skincare for its soothing and healing effects on burns, cuts, and wounds, Aloe Vera is equally valued for its digestive benefits. It is also well-regarded for boosting the immune system, reducing inflammation, and detoxifying the body. Aloe Vera has become a staple in holistic medicine, offering natural relief from a variety of ailments, including digestive disorders, inflammation, and skin irritations. The plant’s gel has been used for centuries for its therapeutic properties, which continue to be popular in modern wellness routines.",
-		default_image: "https://example.com/images/indian_aloe.jpg",
+		default_image:
+			"https://3.imimg.com/data3/NY/QC/MY-3629151/aloe-indica-1000x1000.jpg",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -2537,7 +2591,8 @@ export const plantData = [
 		scientific_name: ["Cyperus rotundus"],
 		description:
 			"Musta, also known as Nut Grass, is a highly valued herb in Ayurvedic medicine due to its potent anti-inflammatory, digestive, and fever-reducing properties. It is traditionally used to treat a variety of digestive issues such as indigestion, bloating, and acidity. Musta is also known for its ability to reduce inflammation and pain, making it useful for conditions such as arthritis and other inflammatory diseases. Additionally, it is known to balance hormones, alleviate menstrual cramps, and promote healthy skin. Musta is a powerful herb with a rich history of use in both traditional and modern wellness practices.",
-		default_image: "https://example.com/images/musta.jpg",
+		default_image:
+			"https://ahaliaayurvedic.org/college/wp-content/uploads/sites/3/2022/07/WhatsApp-Image-2022-07-29-at-4.52.06-PM-min-768x1024.jpeg",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -2572,7 +2627,8 @@ export const plantData = [
 		scientific_name: ["Tylophora indica"],
 		description:
 			"Anantmool is a powerful rejuvenating herb used in Ayurveda for its numerous health benefits, especially in supporting respiratory and digestive health. It has strong detoxifying properties, purifying the blood and promoting healthy circulation. Traditionally, Anantmool has been used to treat respiratory conditions such as asthma, cough, and bronchitis. It also helps to soothe skin irritations, heal rashes, and promote overall skin health. Known for its immune-boosting properties, Anantmool is widely regarded as a natural remedy for improving vitality, cleansing the body, and boosting overall wellness.",
-		default_image: "https://example.com/images/anantmool.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/51eFdtQJ8cL._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Respiratory health":
@@ -2607,7 +2663,8 @@ export const plantData = [
 		scientific_name: ["Valeriana wallichii"],
 		description:
 			"Tagar, also known as Indian Valerian, is a calming herb used extensively in Ayurveda for its ability to relieve stress, improve sleep, and reduce muscle pain. Its sedative properties help promote restful sleep and alleviate insomnia, making it an ideal remedy for those suffering from sleep disorders. Additionally, Tagar is beneficial for reducing stress, anxiety, and tension by calming the nervous system. It is also used to treat muscle spasms, joint pain, and even menstrual cramps, providing relief from discomfort. Tagar is a versatile and powerful herb with widespread use in holistic health practices.",
-		default_image: "https://example.com/images/tagar.jpg",
+		default_image:
+			"https://dukaan.b-cdn.net/700x700/webp/media/8ae172c2-c364-4355-8623-df0f7a6479cc.png",
 		medicinal_uses: [
 			{
 				"Sleep aid":
@@ -2642,7 +2699,8 @@ export const plantData = [
 		scientific_name: ["Ficus benghalensis"],
 		description:
 			"The Banyan Tree, often referred to as the 'Tree of Immortality,' holds sacred significance in India and is known for its vast canopy, aerial roots, and potent medicinal properties. This magnificent tree has been used in Ayurvedic medicine for centuries, especially for its astringent, anti-inflammatory, and anti-diabetic effects. The banyan tree is highly revered for its ability to regulate blood sugar levels and aid in wound healing. It is also used to support respiratory health and improve digestion, making it a valuable plant for both spiritual and health benefits.",
-		default_image: "https://example.com/images/banyan_tree.jpg",
+		default_image:
+			"https://static.toiimg.com/thumb/msid-113263286,width-1280,height-720,imgsize-277858,resizemode-6,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
 		medicinal_uses: [
 			{
 				"Diabetes management":
@@ -2677,7 +2735,8 @@ export const plantData = [
 		scientific_name: ["Ficus religiosa"],
 		description:
 			"The Peepal Tree, also known as the 'Sacred Fig,' holds great religious and medicinal significance, particularly in India and Southeast Asia. Its large, heart-shaped leaves and unique ability to release oxygen during the night make it an essential plant for both spiritual and health purposes. Traditionally, the Peepal tree is used to treat a range of respiratory and digestive ailments, including asthma, bronchitis, and digestive disorders. It is revered for its detoxifying effects and its ability to improve skin health and control blood sugar levels.",
-		default_image: "https://example.com/images/peepal_tree.jpg",
+		default_image:
+			"https://therootcause.blog/wp-content/uploads/2023/06/banyan.webp?w=1024",
 		medicinal_uses: [
 			{
 				"Respiratory health":
@@ -2712,7 +2771,7 @@ export const plantData = [
 		scientific_name: ["Butea monosperma"],
 		description:
 			"Palash, also known as the Flame of the Forest due to its vibrant red-orange flowers, is an important plant in Ayurvedic medicine. This tree is famous for its ability to support liver health, promote blood purification, and treat skin conditions. The medicinal uses of Palash include treating skin infections, eczema, and promoting liver detoxification. It has also been traditionally used to improve digestion and reduce inflammation. Known for its beautiful flowers and numerous medicinal benefits, Palash is an essential plant in both health and aesthetics.",
-		default_image: "https://example.com/images/palash.jpg",
+		default_image: "https://m.media-amazon.com/images/I/71MkR3hZykL.jpg",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -2747,7 +2806,8 @@ export const plantData = [
 		scientific_name: ["Datura stramonium"],
 		description:
 			"Datura, a powerful medicinal plant known for its analgesic and anti-inflammatory properties, has been used for centuries in traditional medicine. Despite its toxic nature, when used in controlled doses, Datura has many health benefits. It is particularly effective for pain relief, alleviating respiratory issues like asthma and bronchitis, and treating skin infections. Datura is also used for wound healing and nerve calming, offering relief for nervous tension and anxiety. It is important to use this plant with caution due to its potent effects.",
-		default_image: "https://example.com/images/datura.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/61xrIHEA37L._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Pain relief":
@@ -2782,7 +2842,8 @@ export const plantData = [
 		scientific_name: ["Azadirachta indica"],
 		description:
 			"Neem bark is a potent natural remedy used for centuries in Ayurveda. Known for its antibacterial, antifungal, and anti-inflammatory properties, it is widely used in both skin care and oral hygiene. Neem bark is particularly beneficial for treating skin conditions like acne, eczema, and other infections due to its powerful antimicrobial effects. Additionally, it helps purify the blood, detoxify the liver, and strengthen the immune system. Its ability to combat infections, improve digestion, and promote oral health makes it a versatile and valuable plant in herbal medicine.",
-		default_image: "https://example.com/images/neem_bark.jpg",
+		default_image:
+			"https://agritech.tnau.ac.in/forestry/images/tibertree/PHOTOS/Neem/Neem%20Bark.jpg",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -2817,7 +2878,8 @@ export const plantData = [
 		scientific_name: ["Gymnema sylvestre"],
 		description:
 			"Gudmar, often referred to as 'Sugar Destroyer' in Ayurveda, is a powerful herb known for its ability to help regulate blood sugar levels. It is widely used in traditional medicine for managing diabetes, improving metabolism, and enhancing overall health. The leaves of Gudmar contain compounds that can reduce sugar cravings and support weight loss, making it a valuable aid for people with type 2 diabetes. Its other benefits include promoting digestive health, supporting liver function, and boosting immunity. Gudmar is highly valued in Ayurvedic treatments and is a natural option for promoting wellness.",
-		default_image: "https://example.com/images/gudmar.jpg",
+		default_image:
+			"https://nurserynisarga.in/wp-content/uploads/2023/12/GUDMAR-plant.webp",
 		medicinal_uses: [
 			{
 				"Diabetes management":
@@ -2852,7 +2914,8 @@ export const plantData = [
 		scientific_name: ["Tagetes erecta"],
 		description:
 			"Marigold, a vibrant and colorful flowering plant, is widely known for its anti-inflammatory and wound-healing properties. It is a popular herb in both traditional and modern medicine due to its diverse health benefits. Marigold is used to treat a variety of ailments, including skin issues such as wounds, burns, and eczema. Its anti-inflammatory properties help reduce swelling and pain in the body. In addition to its skin benefits, Marigold also plays a role in supporting eye health and digestion. This versatile plant is not only decorative but also a natural remedy for various conditions.",
-		default_image: "https://example.com/images/marigold.jpg",
+		default_image:
+			"https://upload.wikimedia.org/wikipedia/commons/b/b0/Tagetes_erecta_chendumalli_chedi.jpg",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -2887,7 +2950,8 @@ export const plantData = [
 		scientific_name: ["Acorus calamus"],
 		description:
 			"Sweet Flag, also known as Vacha, is a powerful herb with a long history in traditional medicine, especially in treating respiratory and cognitive health issues. It is known for its ability to treat cough, asthma, and bronchitis, promoting better breathing. Vacha is also valued for its cognitive-enhancing properties, improving memory and concentration. Additionally, this herb helps with digestive problems like indigestion and bloating. Vacha is also used for pain relief, stress reduction, and calming nervous tension, making it a versatile herb with a broad range of benefits.",
-		default_image: "https://example.com/images/sweet_flag.jpg",
+		default_image:
+			"https://cdn.mos.cms.futurecdn.net/HpXtxCVjXjuUQikBbcLGkF.jpg",
 		medicinal_uses: [
 			{
 				"Respiratory health":
@@ -2922,7 +2986,8 @@ export const plantData = [
 		scientific_name: ["Crocus sativus"],
 		description:
 			"Kesar, or saffron, is one of the most prized spices in the world, known for its numerous health benefits. It is especially beneficial for skin health, as it improves complexion and reduces blemishes. Saffron also has mood-enhancing properties, helping to reduce stress and improve emotional well-being. Its use extends to supporting heart health, promoting better circulation and healthy heart function. Additionally, saffron aids digestion, reduces acidity, and supports the digestive system. It is also considered an aphrodisiac, enhancing libido and reproductive health. With its rich history and health benefits, saffron is truly a versatile plant.",
-		default_image: "https://example.com/images/saffron.jpg",
+		default_image:
+			"https://www.agrifarming.in/wp-content/uploads/2015/08/Safforn-Farming.jpg",
 		medicinal_uses: [
 			{
 				"Mood enhancement":
@@ -2957,7 +3022,7 @@ export const plantData = [
 		scientific_name: ["Aegle marmelos"],
 		description:
 			"Beal, also known as Stone Apple, is an important plant in Ayurvedic medicine, valued for its digestive, immune-boosting, and respiratory health benefits. The fruit and leaves of Beal have been used to treat a variety of ailments. It is particularly known for its effectiveness in treating digestive issues like constipation and diarrhea. Beal also supports liver detoxification and enhances immunity. Additionally, it alleviates respiratory conditions like asthma and bronchitis. Its blood-purifying properties further contribute to its reputation as a medicinal powerhouse.",
-		default_image: "https://example.com/images/beal.jpg",
+		default_image: "https://m.media-amazon.com/images/I/8143R6Oi5UL.jpg",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -2992,7 +3057,8 @@ export const plantData = [
 		scientific_name: ["Tribulus terrestris"],
 		description:
 			"Gokshura, also known as Puncture Vine, is a rejuvenating herb that is widely used to support kidney health, improve physical strength, and enhance overall vitality. It is known for its diuretic properties, helping to support kidney function and treat urinary issues. Additionally, Gokshura is commonly used to improve reproductive health, boost libido, and enhance fertility. Its anti-inflammatory properties reduce inflammation and pain in the body, making it beneficial for conditions like arthritis. This herb is also used to support heart health by promoting healthy blood pressure and cholesterol levels.",
-		default_image: "https://example.com/images/gokshura.jpg",
+		default_image:
+			"https://morelifemarket.com/wp-content/uploads/2021/07/morelifemarket-herbs-gokshura-root.png",
 		medicinal_uses: [
 			{
 				"Kidney health":
@@ -3027,7 +3093,8 @@ export const plantData = [
 		scientific_name: ["Picrorhiza kurroa"],
 		description:
 			"Katuka is a bitter herb used extensively in Ayurveda, prized for its liver detoxifying properties and boosting the immune system. It helps improve digestion, reduces bloating, and is beneficial in managing inflammatory conditions. Katuka also supports the treatment of fevers and infections, making it a versatile herb in traditional medicine. This herb has a unique bitter taste, which is often used to enhance the effectiveness of other herbs in a formula. It has a long history of use in treating liver diseases and promoting overall health and vitality.",
-		default_image: "https://example.com/images/katuka.jpg",
+		default_image:
+			"https://www.flowersofindia.net/catalog/slides/Bitter-Root.jpg",
 		medicinal_uses: [
 			{
 				"Liver health":
@@ -3062,7 +3129,8 @@ export const plantData = [
 		scientific_name: ["Madhuca longifolia"],
 		description:
 			"Mahua is a versatile tree found in tropical regions, renowned for its nutritious flowers and medicinal properties. The flowers and seeds of Mahua are used in various traditional remedies to treat a range of ailments, including skin conditions, joint pain, and digestive issues. Mahua has potent antioxidant and anti-inflammatory properties, making it effective for pain relief and wound healing. It is also considered an energy-boosting herb, promoting vitality and nourishment. Its flowers are used in the preparation of medicinal oils, making Mahua a valuable tree in both traditional and modern medicine.",
-		default_image: "https://example.com/images/mahua.jpg",
+		default_image:
+			"https://www.feedipedia.org/sites/default/files/images/mahua_tree.jpg",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -3097,7 +3165,7 @@ export const plantData = [
 		scientific_name: ["Eclipta prostrata"],
 		description:
 			"Bhringraj, also known as the 'King of Herbs' for hair, is widely used in Ayurveda to promote hair growth and prevent hair loss. It is also revered for its liver detoxifying and rejuvenating properties. Bhringraj helps in the treatment of skin disorders and improves overall skin health. It is a natural remedy for conditions such as dandruff, eczema, and psoriasis. Known for its medicinal value, this herb enhances cognitive function, promotes blood circulation, and strengthens the immune system, offering a holistic approach to health and wellness.",
-		default_image: "https://example.com/images/bhringraj.jpg",
+		default_image: "https://m.media-amazon.com/images/I/41iYtra4ZGL.jpg",
 		medicinal_uses: [
 			{
 				"Hair growth":
@@ -3132,7 +3200,8 @@ export const plantData = [
 		scientific_name: ["Psoralea corylifolia"],
 		description:
 			"Bakuchi is known for its medicinal benefits, particularly in treating skin disorders and improving pigmentation. It is most famous for its ability to treat conditions like vitiligo, psoriasis, and eczema. Bakuchi also supports liver health and promotes overall detoxification. It is used in both internal and external remedies, with oils and creams made from Bakuchi being popular for treating skin ailments. Apart from its dermatological benefits, Bakuchi also strengthens the immune system and promotes respiratory health, making it a comprehensive herb for healing and wellness.",
-		default_image: "https://example.com/images/bakuchi.jpg",
+		default_image:
+			"https://iafaforallergy.com/wp-content/uploads/2023/11/Psoralea-corylifolia-1.jpg",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -3167,7 +3236,7 @@ export const plantData = [
 		scientific_name: ["Sapindus mukorossi"],
 		description:
 			"Ritha, also known as Soapnut, is a natural cleanser used in hair and skin care, prized for its ability to cleanse without harsh chemicals. The fruit of the Ritha tree contains saponins, which act as a natural detergent, making it effective for cleaning and washing. It is widely used as a natural shampoo, as it is gentle on the scalp and promotes shiny, healthy hair. Ritha also treats acne and improves skin texture. It has antimicrobial properties, making it beneficial for treating respiratory issues and infections.",
-		default_image: "https://example.com/images/ritha.jpg",
+		default_image: "https://m.media-amazon.com/images/I/61dV98Qu+cS.jpg",
 		medicinal_uses: [
 			{
 				"Hair health":
@@ -3202,7 +3271,8 @@ export const plantData = [
 		scientific_name: ["Cedrus deodara"],
 		description:
 			"Devdaru, also known as Deodar Cedar, is a sacred tree known for its respiratory health benefits and ability to relieve pain. Its wood and oil have been used in traditional remedies for treating coughs, asthma, and other respiratory conditions. It is also effective in reducing muscle and joint pain, offering natural relief from stiffness and soreness. The tree's antiseptic properties help in healing wounds and preventing infections. In addition to its medicinal uses, the fragrance of Deodar Cedar promotes relaxation and stress relief, making it a calming and therapeutic plant.",
-		default_image: "https://example.com/images/devdaru.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/71-0HZo7SsL._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Respiratory health":
@@ -3237,7 +3307,8 @@ export const plantData = [
 		scientific_name: ["Plumbago zeylanica"],
 		description:
 			"Chitrak, or Leadwort, is a well-known Ayurvedic herb used to improve digestion and treat skin disorders. Its potent properties help in boosting appetite and enhancing digestive health, making it a valuable herb for treating indigestion and bloating. Chitrak is also effective in treating skin conditions like eczema, psoriasis, and other inflammatory skin disorders. It has anti-inflammatory and wound-healing properties, promoting the healing of cuts and injuries. Additionally, Chitrak is used to reduce fever and manage inflammation, making it an important herb for general wellness.",
-		default_image: "https://example.com/images/chitrak.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/81aC4O7LiCL._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -3272,7 +3343,8 @@ export const plantData = [
 		scientific_name: ["Mesua ferrea"],
 		description:
 			"Nagkesar, also known as Ceylon Ironwood, is a highly regarded tree native to South and Southeast Asia. The plant has been prized in traditional medicine for its numerous health benefits. It is widely used for its anti-inflammatory properties, making it effective in treating conditions like arthritis and muscle pain. Additionally, it supports digestive health by addressing issues such as diarrhea and indigestion. The plant also promotes healthy skin by improving complexion and aiding wound healing. Nagkesar is also known for its positive impact on respiratory health and its ability to improve blood circulation.",
-		default_image: "https://example.com/images/nagkesar.jpg",
+		default_image:
+			"https://seed2plant.in/cdn/shop/products/nagkesar-plant-800x800.jpg?v=1680689982",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -3307,7 +3379,8 @@ export const plantData = [
 		scientific_name: ["Acacia catechu"],
 		description:
 			"Cutch Tree, commonly known as Khair, is a species of Acacia native to Asia, particularly India and Southeast Asia. Known for its medicinal properties, the tree has been used for centuries in traditional medicine. Its astringent bark is commonly used to treat oral and skin conditions. Khair is also effective in treating digestive issues such as diarrhea and dysentery. The tree's medicinal uses extend to its anti-inflammatory properties, making it useful for reducing swelling and promoting wound healing. Khair is a hardy plant that can withstand dry conditions, making it ideal for arid regions.",
-		default_image: "https://example.com/images/cutch_tree.jpg",
+		default_image:
+			"https://hugaplant.com/cdn/shop/files/MAIN_477ba03a-4266-44be-9b1b-4f737635b357_1200x.png?v=1697093404",
 		medicinal_uses: [
 			{
 				"Oral health":
@@ -3342,7 +3415,8 @@ export const plantData = [
 		scientific_name: ["Pueraria tuberosa"],
 		description:
 			"Indian Kudzu, known scientifically as Pueraria tuberosa, is a powerful Ayurvedic herb native to India. Renowned for its numerous health benefits, it is commonly used to improve reproductive health, enhance muscle strength, and support digestive function. This herb is particularly known for its ability to balance hormones and boost fertility, making it an essential component of traditional remedies for women's health. Indian Kudzu also promotes better digestion, alleviates bloating, and improves overall vitality. Additionally, it is a popular choice for its anti-aging effects and support for liver detoxification, making it a versatile and potent plant in natural medicine.",
-		default_image: "https://example.com/images/indian_kudzu.jpg",
+		default_image:
+			"https://www.flowersofindia.net/catalog/slides/Indian%20Kudzu.jpg",
 		medicinal_uses: [
 			{
 				"Reproductive health":
@@ -3377,7 +3451,8 @@ export const plantData = [
 		scientific_name: ["Cannabis sativa"],
 		description:
 			"Hemp, or Bhang, is a versatile plant with a long history of both industrial and medicinal uses. It is known for its therapeutic properties, particularly in pain management, mental health support, and promoting overall well-being. Hemp's medicinal benefits are attributed to its anti-inflammatory and analgesic properties, making it effective in alleviating chronic pain and reducing inflammation. Additionally, Hemp helps in managing mental health issues such as stress, anxiety, and depression. It also supports digestive health by improving appetite and digestion. Hemp has skincare benefits, treating conditions like acne and skin inflammation, and promotes restful sleep, contributing to overall relaxation and recovery.",
-		default_image: "https://example.com/images/hemp.jpg",
+		default_image:
+			"https://cdn.britannica.com/39/123539-050-837C3C7C/Hemp.jpg",
 		medicinal_uses: [
 			{
 				"Pain relief":
@@ -3412,7 +3487,8 @@ export const plantData = [
 		scientific_name: ["Woodfordia fruticosa"],
 		description:
 			"Woodfordia, also known as the Fire Flame Bush, is an important herb in Ayurvedic medicine, prized for its astringent, antimicrobial, and anti-inflammatory properties. This plant is traditionally used to treat various skin conditions such as wounds, ulcers, and infections. It is also used to support digestive health, particularly in treating diarrhea and dysentery. Woodfordia has beneficial effects on menstrual health, helping to regulate cycles and reduce cramps. In addition, it is a valuable remedy for respiratory issues such as coughs and colds. Its versatile medicinal properties make it a highly regarded plant in herbal medicine.",
-		default_image: "https://example.com/images/woodfordia.jpg",
+		default_image:
+			"https://www.flowersofindia.net/catalog/slides/Fire%20Flame%20Bush.jpg",
 		medicinal_uses: [
 			{
 				"Skin health":
@@ -3447,7 +3523,8 @@ export const plantData = [
 		scientific_name: ["Cinnamomum tamala"],
 		description:
 			"Indian Bay Leaf is a fragrant herb that is widely used both in cooking and traditional medicine. Known for its aromatic properties, it is often added to dishes to enhance flavor. In traditional medicine, it is recognized for its therapeutic benefits, especially in promoting digestive health and treating respiratory issues. The leaves are used to relieve symptoms of gas, indigestion, and bloating. Additionally, Indian Bay Leaf helps control blood sugar levels, which is beneficial for individuals with diabetes. Its antioxidant properties help protect against oxidative stress and support heart health by reducing cholesterol levels.",
-		default_image: "https://example.com/images/indian_bay_leaf.jpg",
+		default_image:
+			"https://m.media-amazon.com/images/I/71nhpwhJaLL._AC_UF1000,1000_QL80_.jpg",
 		medicinal_uses: [
 			{
 				"Digestive health":
@@ -3482,7 +3559,8 @@ export const plantData = [
 		scientific_name: ["Tecomella undulata"],
 		description:
 			"Rohitaka, also known as Tecomella undulata, is a medicinal tree that is highly valued for its liver-protective properties. It is commonly used to treat various liver disorders and to support overall liver health. Additionally, it has applications in treating digestive health, especially in cases of dysentery and indigestion. Rohitaka also promotes skin health by alleviating conditions like eczema and rashes. Its anti-inflammatory properties help reduce pain and swelling, especially in joint disorders like arthritis and rheumatism. Rohitaka is well-suited to dry climates and can thrive in arid conditions with minimal water.",
-		default_image: "https://example.com/images/rohitaka.jpg",
+		default_image:
+			"https://www.plantsguru.com/image/cache/data/Avenue%20Tree/plantguru-avenuetree-amoora-rohituka-800x800.jpg",
 		medicinal_uses: [
 			{
 				"Liver health":
