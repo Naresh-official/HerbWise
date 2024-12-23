@@ -21,6 +21,7 @@ export async function searchImage(imageBuffer, mimeType = "image/jpeg") {
 	const imagePart = bufferToGenerativePart(imageBuffer, mimeType);
 	try {
 		const result = await model.generateContent([prompt, imagePart]);
+console.log(result.response.text());
 		return result.response.text();
 	} catch (error) {
 		console.error("Error generating content:", error);
