@@ -182,13 +182,13 @@ export default function ImageSearchPage() {
 											<span className="font-semibold">
 												Scientific Name:{" "}
 											</span>
-											{r.scientificName}
+											{r.scientificName || "N/A"}
 										</p>
 										<p>
 											<span className="font-semibold">
 												Confidence:{" "}
 											</span>
-											{r.confidenceLevel}
+											{r.confidenceLevel || "N/A"}
 											{" %"}
 										</p>
 									</div>

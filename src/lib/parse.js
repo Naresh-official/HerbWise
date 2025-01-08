@@ -1,28 +1,36 @@
 export const parseResponse = (response) => {
 	const plantData = [];
-	const completeEntryRegex =
-		/(\d+)\.\s*\*\*Common Name\*\*:\s*([\w\s]+)\s*\n\s*\*\*Scientific Name\*\*:\s*([\w\s\.\-]+)\s*\n\s*\*\*Confidence Level\*\*:\s*(\d+)%/g;
-	const incompleteEntryRegex =
-		/(\d+)\.\s*\*\*Common Name\*\*:\s*([\w\s]+)\s*\n\s*\*\*Scientific Name\*\*:\s*Unable to determine a second likely match\./g;
+	const lines = response.split("\n");
+	let currentPlant = {};
 
-	let match;
-	while ((match = completeEntryRegex.exec(response)) !== null) {
-		plantData.push({
-			index: match[1],
-			commonName: match[2].trim(),
-			scientificName: match[3].trim(),
-			confidenceLevel: match[4],
-		});
+	lines.forEach((line) => {
+		line = line.trim();
+
+		if (line.match(/^\d+\./)) {
+			if (Object.keys(currentPlant).length > 0) {
+				plantData.push(currentPlant);
+			}
+			currentPlant = {};
+			const parts = line.split("**Common Name**:");
+			if (parts.length > 1) {
+				currentPlant.index = parts[0].trim().replace(".", "");
+				currentPlant.commonName = parts[1].trim();
+			}
+		} else if (line.startsWith("**Scientific Name**:")) {
+			currentPlant.scientificName = line
+				.replace("**Scientific Name**:", "")
+				.trim()
+				.replace(/\*/g, "");
+		} else if (line.startsWith("**Confidence Level**:")) {
+			currentPlant.confidenceLevel = line
+				.replace("**Confidence Level**:", "")
+				.trim()
+				.replace("%", "");
+		}
+	});
+
+	if (Object.keys(currentPlant).length > 0) {
+		plantData.push(currentPlant);
 	}
-
-	while ((match = incompleteEntryRegex.exec(response)) !== null) {
-		plantData.push({
-			index: match[1],
-			commonName: match[2].trim(),
-			scientificName: "Unable to determine",
-			confidenceLevel: null,
-		});
-	}
-
 	return plantData;
 };
